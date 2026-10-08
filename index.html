@@ -1,0 +1,1068 @@
+
+
+Index · HTML
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compare It! 8º ano</title>
+<meta name="description" content="Revisão SARESP de Língua Inglesa – comparativo e superlativo – 8º ano.">
+<style>
+:root{
+  --bg:#f6f4ef; --card:#ffffff; --ink:#1f2430; --muted:#5b6170; --line:#e3ded3;
+  --brand:#1f6f78; --brand-2:#e9f3f3; --accent:#e8833a; --accent-2:#fdf0e4;
+  --ok:#1e8a4c; --ok-bg:#e6f5ec; --bad:#c0392b; --bad-bg:#fbeae8; --warn:#9a6a00; --warn-bg:#fff6dc;
+  --shadow:0 2px 10px rgba(30,30,40,.07); --fs:17px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#16181d; --card:#20232b; --ink:#eceef2; --muted:#a6acb9; --line:#343845;
+    --brand:#5fc2cc; --brand-2:#1d3337; --accent:#f0a160; --accent-2:#3a2a1c;
+    --ok:#5cd18f; --ok-bg:#183326; --bad:#ff8a7d; --bad-bg:#3a1f1c; --warn:#f3c95c; --warn-bg:#352c13;
+    --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16181d; --card:#20232b; --ink:#eceef2; --muted:#a6acb9; --line:#343845;
+  --brand:#5fc2cc; --brand-2:#1d3337; --accent:#f0a160; --accent-2:#3a2a1c;
+  --ok:#5cd18f; --ok-bg:#183326; --bad:#ff8a7d; --bad-bg:#3a1f1c; --warn:#f3c95c; --warn-bg:#352c13;
+  --shadow:none;
+}
+*{box-sizing:border-box}
+html{font-size:var(--fs)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.5}
+header{background:var(--brand);color:#fff;padding:14px 16px}
+:root[data-theme="dark"] header{color:#0f1a1c}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) header{color:#0f1a1c}}
+header .wrap{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+header h1{font-size:1.25rem;margin:0;flex:1;min-width:180px}
+header small{display:block;font-weight:400;opacity:.9;font-size:.8rem}
+.tool{background:rgba(255,255,255,.18);border:0;color:inherit;border-radius:10px;padding:8px 12px;font-size:.9rem;cursor:pointer}
+nav{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap}
+nav .wrap{display:flex;gap:4px;padding:6px 12px}
+nav button{border:0;background:none;color:var(--muted);font-size:.95rem;padding:10px 12px;border-radius:10px;cursor:pointer;font-weight:600}
+nav button.on{background:var(--brand-2);color:var(--brand)}
+.wrap{max-width:860px;margin:0 auto}
+main{padding:16px}
+section.page{display:none}
+section.page.on{display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin:0 0 16px;box-shadow:var(--shadow)}
+h2{font-size:1.35rem;margin:.2rem 0 .6rem}
+h3{font-size:1.08rem;margin:0 0 .5rem}
+.tag{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;background:var(--accent-2);color:var(--accent);padding:3px 9px;border-radius:99px;margin-bottom:6px}
+.muted{color:var(--muted)}
+.rule{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.rule div{background:var(--brand-2);border-radius:12px;padding:12px}
+.rule b{color:var(--brand)}
+.en{font-weight:700}
+table{border-collapse:collapse;width:100%;font-size:.95rem}
+th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left}
+th{color:var(--muted);font-size:.8rem;text-transform:uppercase}
+.tablewrap{overflow-x:auto}
+.q{border-top:1px dashed var(--line);padding:14px 0}
+.q:first-of-type{border-top:0}
+.q .stem{font-size:1.02rem;margin-bottom:8px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:10px 14px;font-size:1rem;cursor:pointer;text-align:left}
+.opt:hover{border-color:var(--brand)}
+.opt.sel{border-color:var(--brand);background:var(--brand-2)}
+.opt.right{border-color:var(--ok);background:var(--ok-bg)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+.opt[disabled]{cursor:default}
+.opts.col{flex-direction:column}
+.fb{margin-top:10px;border-radius:12px;padding:10px 12px;font-size:.96rem;display:none}
+.fb.show{display:block}
+.fb.ok{background:var(--ok-bg);color:var(--ok)}
+.fb.bad{background:var(--bad-bg);color:var(--bad)}
+.fb.warn{background:var(--warn-bg);color:var(--warn)}
+.fb .why{color:var(--ink);display:block;margin-top:4px}
+.fb ul{margin:6px 0 0;padding-left:18px;color:var(--ink)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+input[type=text],textarea{font:inherit;color:var(--ink);background:var(--bg);border:2px solid var(--line);border-radius:12px;padding:10px 12px;width:100%}
+input[type=text]:focus,textarea:focus{outline:none;border-color:var(--brand)}
+input.inline{display:inline-block;width:190px;max-width:100%;margin:0 6px;padding:6px 10px}
+textarea{min-height:64px;resize:vertical}
+.btn{border:0;border-radius:12px;padding:11px 16px;font-size:1rem;font-weight:700;cursor:pointer;background:var(--brand);color:#fff}
+:root[data-theme="dark"] .btn{color:#0f1a1c}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn{color:#0f1a1c}}
+.btn.alt{background:var(--accent)}
+.btn.ghost{background:var(--brand-2);color:var(--brand)}
+.vocab{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.vocab button{border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:14px;padding:12px;font-size:1rem;cursor:pointer}
+.vocab button span{display:block;font-size:1.8rem}
+.bar{height:12px;background:var(--line);border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--brand)}
+.vs{display:grid;grid-template-columns:110px 1fr 1fr;gap:6px 10px;align-items:center;font-size:.95rem}
+.vs .h{font-weight:700;text-align:center}
+.text{background:var(--bg);border-left:4px solid var(--accent);padding:10px 14px;border-radius:8px;margin:8px 0}
+.score{font-size:2rem;font-weight:800;color:var(--brand)}
+.prog{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.prog span{font-size:.85rem;background:var(--brand-2);color:var(--brand);border-radius:99px;padding:3px 10px}
+.done{color:var(--ok);font-weight:700}
+.next{display:flex;justify-content:flex-end;margin-top:6px}
+#qrbox{display:none;text-align:center}
+#qrbox.show{display:block}
+#qr{display:inline-block;background:#fff;padding:12px;border-radius:12px;margin:8px 0}
+.small{font-size:.85rem}
+footer{text-align:center;color:var(--muted);font-size:.8rem;padding:20px 16px 40px}
+@media (max-width:520px){.vs{grid-template-columns:86px 1fr 1fr}main{padding:12px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1>Compare It! 🤖⚡ <small>Revisão SARESP · Língua Inglesa · 8º ano</small></h1>
+  <button class="tool" id="bigFont" type="button">A+ Letra</button>
+  <button class="tool" id="themeBtn" type="button">🌓 Tema</button>
+</div></header>
+<nav><div class="wrap" id="tabs">
+  <button data-p="home" class="on" type="button">Início</button>
+  <button data-p="a1" type="button">Aula 1 · Comparativo</button>
+  <button data-p="a2" type="button">Aula 2 · Superlativo</button>
+  <button data-p="saresp" type="button">Desafio SARESP</button>
+  <button data-p="res" type="button">Meu resultado</button>
+</div></nav>
+ 
+<main class="wrap">
+ 
+<!-- ================= INÍCIO ================= -->
+<section class="page on" id="home">
+  <div class="card">
+    <span class="tag">Bem-vindo(a)</span>
+    <h2>Hoje a missão é COMPARAR 🔍</h2>
+    <p>Nesta revisão para o SARESP, você vai aprender a comparar coisas em inglês:</p>
+    <div class="rule">
+      <div><b>Comparativo</b> = compara <b>2</b> coisas.<br><span class="en">Robots are faster than humans.</span></div>
+      <div><b>Superlativo</b> = o mais de <b>um grupo</b>.<br><span class="en">The laptop is the most expensive gadget.</span></div>
+    </div>
+    <p class="muted small">Cada exercício mostra se está certo ou errado <b>e explica o porquê</b>. Leia sempre a explicação!</p>
+  </div>
+  <div class="card">
+    <h3>✍️ Antes de começar</h3>
+    <label>Seu nome<br><input type="text" id="nome" autocomplete="off" placeholder="Digite seu nome"></label>
+    <div style="height:10px"></div>
+    <label>Sua turma<br><input type="text" id="turma" autocomplete="off" placeholder="Ex.: 8º B"></label>
+    <div style="height:12px"></div>
+    <div class="row"><button class="btn" type="button" id="startBtn">Começar a Aula 1 →</button></div>
+    <div class="fb" id="startFb"></div>
+  </div>
+  <div class="card">
+    <h3>👨‍🏫 Para o professor</h3>
+    <p class="small muted">Mostre o QR code na TV ou no projetor para a turma abrir esta página no tablet.</p>
+    <button class="btn ghost" type="button" id="qrBtn">Mostrar QR code desta página</button>
+    <div id="qrbox"><div id="qr"></div><div class="small" id="qrurl"></div></div>
+  </div>
+</section>
+ 
+<!-- ================= AULA 1 ================= -->
+<section class="page" id="a1">
+  <div class="card">
+    <span class="tag">Aula 1 · Apostila p. 104 a 108</span>
+    <h2>Are robots better than humans? 🤖 x 🧑</h2>
+    <p>Use o <b>comparativo</b> para comparar <b>duas</b> coisas. A palavra-chave é <span class="en">than</span> (= do que).</p>
+    <div class="rule">
+      <div><b>Adjetivo curto</b> (1 sílaba)<br>+ <b>-er</b> + than<br><span class="en">fast → faster than</span></div>
+      <div><b>Adjetivo longo</b> (2 ou mais sílabas; os terminados em -y seguem a regra do -y)<br><b>more</b> + adjetivo + than<br><span class="en">creative → more creative than</span></div>
+      <div><b>Termina em -y</b><br>troca o y por <b>i</b> + er<br><span class="en">easy → easier · happy → happier</span></div>
+      <div><b>Consoante-vogal-consoante</b><br>dobra a última letra + er<br><span class="en">big → bigger · hot → hotter</span></div>
+      <div><b>Irregulares</b> (mudam de palavra)<br><span class="en">good → better<br>bad → worse</span></div>
+      <div><b>Cuidado!</b><br>Nunca use os dois juntos:<br><span class="en">❌ more faster ✅ faster</span></div>
+    </div>
+  </div>
+ 
+  <div class="card" id="m1">
+    <span class="tag">Missão 1 · Ouvir e escrever</span>
+    <h3>🔊 Vocabulário do robô</h3>
+    <p class="small muted">Toque para ouvir. Depois faça o ditado: ouça e <b>escreva</b> a palavra.</p>
+    <div class="vocab" id="voc1"></div>
+    <div id="dict1" style="margin-top:14px"></div>
+  </div>
+ 
+  <div class="card" id="m2">
+    <span class="tag">Missão 2 · Escolha e entenda</span>
+    <h3>Qual é a forma certa?</h3>
+    <p class="small muted">Depois de escolher, leia a explicação. Ela diz o porquê.</p>
+    <div id="mc1"></div>
+  </div>
+ 
+  <div class="card" id="m3">
+    <span class="tag">Missão 3 · Agora você escreve</span>
+    <h3>✍️ Escreva o comparativo</h3>
+    <p class="small muted">Digite só a forma do adjetivo (o <span class="en">than</span> já está na frase). Se errar, leia a dica e tente de novo.</p>
+    <div id="ty1"></div>
+  </div>
+ 
+  <div class="card" id="m4">
+    <span class="tag">Missão 4 · Detetive do erro 🕵️</span>
+    <h3>Reescreva a frase corrigida</h3>
+    <p class="small muted">Cada frase tem um erro (uma tem dois!). Escreva a frase <b>inteira</b> do jeito certo.</p>
+    <div id="fix1"></div>
+  </div>
+ 
+  <div class="card" id="m5">
+    <span class="tag">Missão 5 · Produção</span>
+    <h3>🤖 Robot x Human 🧑 — escreva suas frases</h3>
+    <p class="small muted">Olhe os dados (0 a 10) e escreva uma frase comparando robôs e humanos com o adjetivo pedido. O site confere a gramática <b>e</b> se a frase combina com os dados.</p>
+    <div class="vs" id="vsTable"></div>
+    <div id="prod1" style="margin-top:12px"></div>
+  </div>
+ 
+  <div class="card" id="m6">
+    <span class="tag">Missão 6 · Sua vida</span>
+    <h3>✍️ Compare duas coisas do seu dia a dia</h3>
+    <p class="small muted">Ex.: seu celular e o do colega, dois times, dois cantores, dois lugares de Guarulhos.</p>
+    <div id="free1"></div>
+    <div class="next"><button class="btn alt" type="button" data-go="a2">Ir para a Aula 2 →</button></div>
+  </div>
+</section>
+ 
+<!-- ================= AULA 2 ================= -->
+<section class="page" id="a2">
+  <div class="card">
+    <span class="tag">Aula 2 · Apostila p. 109 a 114</span>
+    <h2>The coolest gadgets 📱⌚🎧</h2>
+    <p>Use o <b>superlativo</b> para dizer que algo é <b>o mais</b> de um grupo. A palavra-chave é <span class="en">the</span>.</p>
+    <div class="rule">
+      <div><b>Adjetivo curto</b><br><b>the</b> + adjetivo + <b>-est</b><br><span class="en">fast → the fastest</span></div>
+      <div><b>Adjetivo longo</b><br><b>the most</b> + adjetivo<br><span class="en">expensive → the most expensive</span></div>
+      <div><b>Termina em -y</b><br>troca o y por <b>i</b> + est<br><span class="en">funny → the funniest</span></div>
+      <div><b>Consoante-vogal-consoante</b><br>dobra a última letra<br><span class="en">hot → the hottest</span></div>
+      <div><b>Irregulares</b><br><span class="en">good → better → the best<br>bad → worse → the worst</span></div>
+      <div><b>Pistas de superlativo</b><br><span class="en">in the class · in the world · of all · I've ever seen</span></div>
+    </div>
+    <div class="tablewrap" style="margin-top:12px">
+      <table>
+        <tr><th></th><th>Comparativo (2 coisas)</th><th>Superlativo (grupo)</th></tr>
+        <tr><td>Curto</td><td class="en">-er than</td><td class="en">the …-est</td></tr>
+        <tr><td>Longo</td><td class="en">more … than</td><td class="en">the most …</td></tr>
+        <tr><td>good</td><td class="en">better than</td><td class="en">the best</td></tr>
+        <tr><td>bad</td><td class="en">worse than</td><td class="en">the worst</td></tr>
+      </table>
+    </div>
+  </div>
+ 
+  <div class="card">
+    <span class="tag">Missão 1 · Ouvir e escrever</span>
+    <h3>🔊 Vocabulário dos gadgets</h3>
+    <p class="small muted">Toque para ouvir. Depois faça o ditado.</p>
+    <div class="vocab" id="voc2"></div>
+    <div id="dict2" style="margin-top:14px"></div>
+  </div>
+ 
+  <div class="card">
+    <span class="tag">Missão 2 · Escolha e entenda</span>
+    <h3>Comparativo ou superlativo?</h3>
+    <p class="small muted">Procure as pistas: <span class="en">than</span> = comparativo; <span class="en">the … in the class / of all / ever</span> = superlativo.</p>
+    <div id="mc2"></div>
+  </div>
+ 
+  <div class="card">
+    <span class="tag">Missão 3 · Agora você escreve</span>
+    <h3>✍️ Escreva o superlativo (com <span class="en">the</span>!)</h3>
+    <p class="small muted">Digite a forma completa, por exemplo: <span class="en">the tallest</span>.</p>
+    <div id="ty2"></div>
+  </div>
+ 
+  <div class="card">
+    <span class="tag">Missão 4 · Ranking dos gadgets 🏆</span>
+    <h3>Leia a tabela e escreva frases</h3>
+    <div class="tablewrap">
+      <table>
+        <tr><th>Gadget</th><th>Price</th><th>Weight</th><th>Votes (class)</th></tr>
+        <tr><td>💻 Laptop</td><td>R$ 3,500</td><td>1.5 kg</td><td>6</td></tr>
+        <tr><td>⌚ Smartwatch</td><td>R$ 900</td><td>40 g</td><td>12</td></tr>
+        <tr><td>🎧 Headphones</td><td>R$ 250</td><td>200 g</td><td>15</td></tr>
+        <tr><td>🕶️ Smart glasses</td><td>R$ 2,000</td><td>50 g</td><td>3</td></tr>
+      </table>
+    </div>
+    <p class="small muted">Atenção: em inglês, o número usa vírgula para milhar e ponto para decimal (R$ 3,500 = três mil e quinhentos; 1.5 kg = um quilo e meio).</p>
+    <div id="prod2"></div>
+  </div>
+ 
+  <div class="card">
+    <span class="tag">Ticket de saída 🎟️</span>
+    <h3>✍️ Duas frases sobre VOCÊ</h3>
+    <p class="small muted">Escreva sobre sua escola, sua família, sua música favorita, Guarulhos… Exemplo: <span class="en">"Garota de Ipanema" is the most famous bossa nova song.</span></p>
+    <div id="ticket"></div>
+    <div class="next"><button class="btn alt" type="button" data-go="saresp">Ir para o Desafio SARESP →</button></div>
+  </div>
+</section>
+ 
+<!-- ================= SARESP ================= -->
+<section class="page" id="saresp">
+  <div class="card">
+    <span class="tag">Desafio SARESP · Peer Instruction</span>
+    <h2>Vote, converse, vote de novo 👥</h2>
+    <p><b>1º</b> Leia e vote sozinho(a). <b>2º</b> Explique ao colega <b>por que</b> escolheu. <b>3º</b> Vote de novo. Depois, leia a explicação de <b>todas</b> as alternativas.</p>
+  </div>
+  <div id="sar"></div>
+  <div class="next"><button class="btn alt" type="button" data-go="res">Ver meu resultado →</button></div>
+</section>
+ 
+<!-- ================= RESULTADO ================= -->
+<section class="page" id="res">
+  <div class="card">
+    <span class="tag">Meu resultado</span>
+    <h2 id="resName">—</h2>
+    <div id="resBody"></div>
+    <div class="row" style="margin-top:12px">
+      <button class="btn" type="button" id="copyBtn">Copiar resultado</button>
+      <button class="btn ghost" type="button" id="resetBtn">Recomeçar tudo</button>
+    </div>
+    <div class="fb" id="copyFb"></div>
+    <p class="small muted">Mostre esta tela ao professor (ou tire um print).</p>
+  </div>
+</section>
+</main>
+<footer>E.E. José Roberto Friebolin · Prof. Carlos · Revisão SARESP 2026 · Conteúdo baseado no Material Digital SEDUC-SP (8º ano, 4º bimestre, Aulas 1, 3, 5, 7, 9 e 11).</footer>
+ 
+<script>
+/* ===================== DADOS DE ADJETIVOS ===================== */
+var ADJ = {};
+function addA(list, type){ list.forEach(function(x){ ADJ[x[0]] = {c:x[1], s:x[2], t:type}; }); }
+addA([['fast','faster','fastest'],['tall','taller','tallest'],['short','shorter','shortest'],['old','older','oldest'],['cheap','cheaper','cheapest'],['cold','colder','coldest'],['slow','slower','slowest'],['strong','stronger','strongest'],['small','smaller','smallest'],['light','lighter','lightest'],['loud','louder','loudest'],['smart','smarter','smartest'],['young','younger','youngest'],['long','longer','longest'],['high','higher','highest'],['hard','harder','hardest'],['warm','warmer','warmest'],['cool','cooler','coolest'],['new','newer','newest'],['great','greater','greatest'],['quick','quicker','quickest'],['rich','richer','richest'],['clean','cleaner','cleanest'],['kind','kinder','kindest'],['low','lower','lowest'],['weak','weaker','weakest'],['deep','deeper','deepest'],['dark','darker','darkest'],['bright','brighter','brightest'],['strict','stricter','strictest']],'short');
+addA([['large','larger','largest'],['nice','nicer','nicest'],['safe','safer','safest'],['late','later','latest'],['wide','wider','widest'],['cute','cuter','cutest'],['wise','wiser','wisest'],['close','closer','closest']],'e');
+addA([['hot','hotter','hottest'],['big','bigger','biggest'],['wet','wetter','wettest'],['thin','thinner','thinnest'],['sad','sadder','saddest'],['fat','fatter','fattest']],'cvc');
+addA([['easy','easier','easiest'],['happy','happier','happiest'],['funny','funnier','funniest'],['heavy','heavier','heaviest'],['friendly','friendlier','friendliest'],['busy','busier','busiest'],['pretty','prettier','prettiest'],['early','earlier','earliest'],['angry','angrier','angriest'],['lazy','lazier','laziest'],['noisy','noisier','noisiest'],['dirty','dirtier','dirtiest'],['crazy','crazier','craziest'],['tasty','tastier','tastiest'],['scary','scarier','scariest'],['healthy','healthier','healthiest'],['ugly','uglier','ugliest']],'y');
+['interesting','delicious','expensive','popular','modern','difficult','beautiful','creative','intelligent','important','comfortable','dangerous','famous','useful','accurate','powerful','exciting','boring','careful','generous','amazing','incredible','wonderful','talented','efficient','colorful','fantastic','relaxing','handsome','patient','organized','responsible','independent','attractive','emotional'].forEach(function(b){ ADJ[b] = {c:'more '+b, s:'most '+b, t:'long'}; });
+ADJ.good = {c:'better', s:'best', t:'irr'};
+ADJ.bad  = {c:'worse',  s:'worst', t:'irr'};
+ADJ.friendly.altc = ['more friendly']; ADJ.friendly.alts = ['the most friendly'];
+ 
+/* ===================== UTILITÁRIOS ===================== */
+function norm(s){
+  return (s||'').toLowerCase().replace(/[’‘`´]/g,"'").replace(/[“”"]/g,'').replace(/[.!?,;:]+/g,' ').replace(/\s+/g,' ').trim();
+}
+function has(n, phrase){
+  var re = new RegExp('(^|[^a-z\'])' + phrase.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + '($|[^a-z])');
+  return re.test(n);
+}
+function lev(a,b){
+  var m=a.length,n=b.length,d=[],i,j;
+  for(i=0;i<=m;i++){d[i]=[i];}
+  for(j=0;j<=n;j++){d[0][j]=j;}
+  for(i=1;i<=m;i++){for(j=1;j<=n;j++){d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));}}
+  return d[m][n];
+}
+function el(tag, attrs, html){
+  var e=document.createElement(tag);
+  if(attrs){ for(var k in attrs){ if(k==='class'){e.className=attrs[k];} else {e.setAttribute(k,attrs[k]);} } }
+  if(html!==undefined){ e.innerHTML=html; }
+  return e;
+}
+function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+function showFb(box, kind, title, why){
+  box.className='fb show '+kind;
+  box.innerHTML='<b>'+title+'</b>'+(why?'<span class="why">'+why+'</span>':'');
+}
+function wc(n){ return n ? n.split(' ').length : 0; }
+ 
+/* ===================== VOZ ===================== */
+var enVoice=null;
+function pickVoice(){
+  try{
+    var vs=window.speechSynthesis.getVoices();
+    enVoice = vs.filter(function(v){return /^en(-|_)US/i.test(v.lang);})[0] || vs.filter(function(v){return /^en/i.test(v.lang);})[0] || null;
+  }catch(e){}
+}
+try{ pickVoice(); window.speechSynthesis.onvoiceschanged = pickVoice; }catch(e){}
+function say(t){
+  try{
+    var u=new SpeechSynthesisUtterance(t); u.lang='en-US'; u.rate=0.85; if(enVoice){u.voice=enVoice;}
+    window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
+  }catch(e){ alertless('Seu tablet não tem voz disponível. Peça ajuda ao professor.'); }
+}
+function alertless(msg){ console.log(msg); }
+ 
+/* ===================== ESTADO ===================== */
+var KEY='compareit8_v1';
+var S = {nome:'',turma:'',score:{},sent:[],sar:{}};
+try{ var raw=localStorage.getItem(KEY); if(raw){ var o=JSON.parse(raw); if(o && typeof o==='object'){ S=Object.assign(S,o); } } }catch(e){}
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} }
+function mark(group, id, firstTry){
+  S.score[group] = S.score[group] || {};
+  if(!(id in S.score[group])){ S.score[group][id] = !!firstTry; save(); }
+}
+function addSentence(label, text){
+  S.sent = S.sent.filter(function(x){return x.label!==label;});
+  S.sent.push({label:label, text:text}); save();
+}
+ 
+/* ===================== REGRAS (explicações) ===================== */
+function ruleC(b, reveal){
+  var a=ADJ[b], r='';
+  if(a.t==='short'){ r='"'+b+'" é um adjetivo curto: acrescente -er.'; }
+  else if(a.t==='e'){ r='"'+b+'" termina em -e: acrescente só -r.'; }
+  else if(a.t==='cvc'){ r='"'+b+'" termina em consoante-vogal-consoante: dobre a última letra e acrescente -er.'; }
+  else if(a.t==='y'){ r='"'+b+'" termina em -y: troque o y por i e acrescente -er.'; }
+  else if(a.t==='long'){ r='"'+b+'" é um adjetivo longo: use more antes dele.'; }
+  else { r='"'+b+'" é irregular: ele muda de palavra no comparativo.'; }
+  return r + (reveal ? ' Resposta: <b>'+a.c+'</b>.' : '');
+}
+function ruleS(b, reveal){
+  var a=ADJ[b], r='';
+  if(a.t==='short'){ r='"'+b+'" é curto: use the + adjetivo + -est.'; }
+  else if(a.t==='e'){ r='"'+b+'" termina em -e: use the + adjetivo + -st.'; }
+  else if(a.t==='cvc'){ r='"'+b+'" termina em consoante-vogal-consoante: dobre a última letra e use the …-est.'; }
+  else if(a.t==='y'){ r='"'+b+'" termina em -y: troque o y por i e use the …-est.'; }
+  else if(a.t==='long'){ r='"'+b+'" é longo: use the most antes dele.'; }
+  else { r='"'+b+'" é irregular: ele muda de palavra no superlativo.'; }
+  return r + (reveal ? ' Resposta: <b>the '+a.s+'</b>.' : '');
+}
+ 
+function howC(b, reveal){
+  var a=ADJ[b], r={short:'Regra: acrescente -er.', e:'Regra: acrescente só -r.', cvc:'Regra: dobre a última letra e acrescente -er.', y:'Regra: troque o y por i e acrescente -er.', long:'Regra: use more antes do adjetivo.', irr:'Ele vira outra palavra: volte ao quadro de irregulares no topo da página.'}[a.t];
+  return r + (reveal ? ' Resposta: <b>'+a.c+'</b>.' : '');
+}
+function howS(b, reveal){
+  var a=ADJ[b], r={short:'Regra: the + adjetivo + -est.', e:'Regra: the + adjetivo + -st.', cvc:'Regra: dobre a última letra e use the …-est.', y:'Regra: troque o y por i e use the …-est.', long:'Regra: use the most antes do adjetivo.', irr:'Ele vira outra palavra: volte ao quadro de irregulares no topo da página.'}[a.t];
+  return r + (reveal ? ' Resposta: <b>the '+a.s+'</b>.' : '');
+}
+/* Diagnóstico de UMA forma digitada */
+function diagC(b, ans, reveal){
+  var a=ADJ[b], x=norm(ans), c=a.c, s=a.s;
+  if(!x){ return {ok:false, msg:'Escreva sua resposta antes de verificar.'}; }
+  if(x===c || (a.altc && a.altc.indexOf(x)>=0)){ return {ok:true, msg:ruleC(b,true)}; }
+  if(x===c+' than'){ return {ok:true, msg:'Certo! Só um detalhe: o than já estava na frase. '+ruleC(b,true)}; }
+  if(x==='the '+s || x===s || x==='the most '+b || x==='most '+b){ return {ok:false, msg:'Isso é SUPERLATIVO (o mais de um grupo). A frase tem than e compara só DUAS coisas, então use o COMPARATIVO. '+ruleC(b,reveal)}; }
+  if(x==='the '+c){ return {ok:false, msg:'No comparativo não usamos the. '+ruleC(b,reveal)}; }
+  if(a.t!=='long' && x==='more '+c){ return {ok:false, msg:'Você usou more e -er juntos. Use só um dos dois! '+howC(b,reveal)}; }
+  if(a.t!=='long' && a.t!=='irr' && x==='more '+b){ return {ok:false, msg:'"'+b+'" é um adjetivo curto, então NÃO usa more. '+howC(b,reveal)}; }
+  if(a.t==='long' && (x===b+'er' || x===b+'r')){ return {ok:false, msg:'"'+b+'" é um adjetivo longo, então NÃO recebe -er. '+howC(b,reveal)}; }
+  if(a.t==='cvc' && x===b+'er'){ return {ok:false, msg:'Quase! Atenção à última consoante. '+howC(b,reveal)}; }
+  if(a.t==='y' && (x===b+'er' || x===b.slice(0,-1)+'er' || x===b+'ier')){ return {ok:false, msg:'Quase! Atenção ao -y no final do adjetivo. '+howC(b,reveal)}; }
+  if(a.t==='e' && x===b+'er'){ return {ok:false, msg:'Quase! Como "'+b+'" já termina em e, acrescente só -r. '+howC(b,reveal)}; }
+  if(a.t==='irr' && (x===b+'er' || x==='more '+b || x===b+b.slice(-1)+'er' || x==='more '+c)){ return {ok:false, msg:'"'+b+'" é IRREGULAR: não recebe -er nem more. '+howC(b,reveal)}; }
+  if(x===b){ return {ok:false, msg:'Você escreveu o adjetivo sem mudar. Com than precisamos do comparativo. '+ruleC(b,reveal)}; }
+  if(lev(x,c)<=2){ return {ok:false, msg:'Quase! Confira a escrita letra por letra. '+ruleC(b,reveal)}; }
+  return {ok:false, msg:'Ainda não. '+ruleC(b,reveal)};
+}
+function diagS(b, ans, reveal){
+  var a=ADJ[b], x=norm(ans), c=a.c, s=a.s;
+  if(!x){ return {ok:false, msg:'Escreva sua resposta antes de verificar.'}; }
+  if(x==='the '+s || (a.alts && a.alts.indexOf(x)>=0)){ return {ok:true, msg:ruleS(b,true)}; }
+  if(x===s){ return {ok:false, msg:'Quase! No superlativo, sempre use THE antes do adjetivo. '+ruleS(b,reveal)}; }
+  if(x===c || x==='the '+c || x===c+' than' || x==='the more '+b){ return {ok:false, msg:'Isso é COMPARATIVO (compara duas coisas). Aqui a frase fala do mais de um GRUPO, então use o SUPERLATIVO. '+ruleS(b,reveal)}; }
+  if(a.t!=='long' && (x==='the most '+s || x==='most '+s)){ return {ok:false, msg:'Você usou most e -est juntos. Use só um dos dois! '+howS(b,reveal)}; }
+  if(a.t!=='long' && a.t!=='irr' && (x==='the most '+b || x==='most '+b)){ return {ok:false, msg:'"'+b+'" é um adjetivo curto, então NÃO usa most. '+howS(b,reveal)}; }
+  if(a.t==='long' && (x==='the '+b+'est' || x===b+'est' || x==='the '+b+'st')){ return {ok:false, msg:'"'+b+'" é um adjetivo longo, então NÃO recebe -est. '+howS(b,reveal)}; }
+  if(a.t==='cvc' && (x==='the '+b+'est' || x===b+'est')){ return {ok:false, msg:'Quase! Atenção à última consoante. '+howS(b,reveal)}; }
+  if(a.t==='y' && (x==='the '+b+'est' || x===b+'est' || x==='the '+b.slice(0,-1)+'est' || x==='the '+b+'iest')){ return {ok:false, msg:'Quase! Atenção ao -y no final do adjetivo. '+howS(b,reveal)}; }
+  if(a.t==='irr' && (x==='the '+b+'est' || x===b+'est' || x==='the most '+b || x==='most '+b || x==='the '+b+b.slice(-1)+'est')){ return {ok:false, msg:'"'+b+'" é IRREGULAR: não recebe -est nem most. '+howS(b,reveal)}; }
+  if(x===b || x==='the '+b){ return {ok:false, msg:'Você escreveu o adjetivo sem mudar. '+ruleS(b,reveal)}; }
+  if(lev(x,'the '+s)<=2){ return {ok:false, msg:'Quase! Confira a escrita letra por letra. '+ruleS(b,reveal)}; }
+  return {ok:false, msg:'Ainda não. '+ruleS(b,reveal)};
+}
+ 
+/* ===================== CORRETOR DE FRASES LIVRES ===================== */
+var NOT_SUP = ['test','rest','west','forest','interest','guest','nest','chest','request','contest','protest','quest','pest','vest','honest','modest','east','least','breakfast','beast','feast','coast','most','post','host','list','artist','tourist'];
+function genericErrors(n){
+  var errs=[], m, re;
+  if(has(n,'then') && !has(n,'than')){ errs.push('Você escreveu <b>then</b> (= então). Para comparar, a palavra é <b>than</b> (= do que).'); }
+  re=/\bmore (\w+)\b/g;
+  while((m=re.exec(n))){
+    var w=m[1];
+    if(['good','bad'].indexOf(w)>=0){ errs.push('<b>more '+w+'</b> não existe: "'+w+'" é irregular → <b>'+ADJ[w].c+'</b>.'); continue; }
+    if(ADJ[w] && ADJ[w].t!=='long' && !ADJ[w].altc){ errs.push('"'+w+'" é curto, então não usa more → <b>'+ADJ[w].c+'</b>.'); continue; }
+    for(var k in ADJ){ if(ADJ[k].t!=='long' && ADJ[k].c===w){ errs.push('<b>more '+w+'</b>: você usou more e -er juntos. Use só <b>'+w+'</b>.'); break; } }
+  }
+  re=/\bmost (\w+)\b/g;
+  while((m=re.exec(n))){
+    var w2=m[1];
+    if(['good','bad'].indexOf(w2)>=0){ errs.push('<b>most '+w2+'</b> não existe: "'+w2+'" é irregular → <b>the '+ADJ[w2].s+'</b>.'); continue; }
+    if(ADJ[w2] && ADJ[w2].t!=='long' && !ADJ[w2].alts){ errs.push('"'+w2+'" é curto, então não usa most → <b>the '+ADJ[w2].s+'</b>.'); continue; }
+    for(var k2 in ADJ){ if(ADJ[k2].t!=='long' && ADJ[k2].s===w2){ errs.push('<b>most '+w2+'</b>: você usou most e -est juntos. Use só <b>the '+w2+'</b>.'); break; } }
+  }
+  if(/\bthe more \w+/.test(n)){ errs.push('<b>the more</b> está errado. No superlativo, use <b>the most</b>; no comparativo, use <b>more … than</b> (sem the).'); }
+  for(var b in ADJ){
+    var a=ADJ[b];
+    if(a.t==='long' && (has(n,b+'er') || has(n,b+'est'))){ errs.push('"'+b+'" é longo, então não recebe -er/-est → <b>'+a.c+'</b> / <b>the '+a.s+'</b>.'); }
+    if(a.t==='cvc' && (has(n,b+'er') || has(n,b+'est'))){ errs.push('"'+b+'" dobra a última letra → <b>'+a.c+'</b> / <b>the '+a.s+'</b>.'); }
+    if(a.t==='y' && (has(n,b+'er') || has(n,b+'est'))){ errs.push('"'+b+'" termina em -y: troque por i → <b>'+a.c+'</b> / <b>the '+a.s+'</b>.'); }
+    if(a.t==='irr' && (has(n,b+'er') || has(n,b+'est') || has(n,b+b.slice(-1)+'er') || has(n,b+b.slice(-1)+'est'))){ errs.push('"'+b+'" é irregular → <b>'+a.c+'</b> / <b>the '+a.s+'</b>.'); }
+  }
+  return errs;
+}
+function findComp(n){
+  if(/\b(\w+er|more \w+|less \w+|better|worse) than\b/.test(n)){ return true; }
+  return false;
+}
+function findSup(n){
+  var re=/\bthe (most \w+|least \w+|best|worst|(\w+)est)\b/g, m;
+  while((m=re.exec(n))){
+    if(m[2]!==undefined){ if(NOT_SUP.indexOf(m[2]+'est')>=0 || NOT_SUP.indexOf(m[1])>=0){ continue; } }
+    return true;
+  }
+  return false;
+}
+function supWithoutThe(n){
+  for(var b in ADJ){
+    var s=ADJ[b].s;
+    if(has(n,s) && !has(n,'the '+s)){ return s; }
+  }
+  if(/\b(is|are|was|were|am)\s+(best|worst)\b/.test(n)){ return n.match(/\b(best|worst)\b/)[1]; }
+  return null;
+}
+function styleTips(raw){
+  var t=[], s=(raw||'').trim();
+  if(s && s[0]!==s[0].toUpperCase()){ t.push('Comece a frase com letra maiúscula.'); }
+  if(s && !/[.!?]$/.test(s)){ t.push('Termine a frase com ponto final.'); }
+  return t;
+}
+function checkFree(raw, mode){
+  var n=norm(raw);
+  if(wc(n)<4){ return {ok:false, msgs:['Escreva uma frase completa: <b>quem</b> + <b>is/are</b> + comparação. Exemplo: '+(mode==='c'?'<i>My dog is smaller than my cat.</i>':'<i>My mom is the best cook in my family.</i>')]}; }
+  var errs=genericErrors(n);
+  if(mode==='c'){
+    if(/\bthe (\w+er|more \w+) than\b/.test(n)){ errs.push('No comparativo não usamos <b>the</b>. Exemplo: <i>bigger than</i>, não <i>the bigger than</i>.'); }
+    if(!errs.length && !has(n,'than')){ errs.push('Faltou <b>than</b>. O comparativo precisa de than: <i>A is bigger than B.</i>'); }
+    if(!errs.length && !findComp(n)){ errs.push('Não encontrei o comparativo antes de than. Use <b>-er than</b> (curto) ou <b>more … than</b> (longo).'); }
+  } else {
+    if(/\bthe (most \w+|\w+est|best|worst) than\b/.test(n)){ errs.push('No superlativo não usamos <b>than</b>. Use <i>the best in…</i>, <i>the tallest of…</i>.'); }
+    if(!errs.length && !findSup(n)){
+      var sw=supWithoutThe(n);
+      if(sw){ errs.push('Faltou <b>the</b> antes de <b>'+sw+'</b>. No superlativo, sempre: <i>the '+sw+'</i>.'); }
+      else if(findComp(n)){ errs.push('Essa frase está no COMPARATIVO (than). Aqui peço o SUPERLATIVO: <b>the …-est</b> ou <b>the most …</b>.'); }
+      else { errs.push('Não encontrei o superlativo. Use <b>the …-est</b> (curto), <b>the most …</b> (longo), <b>the best</b> ou <b>the worst</b>.'); }
+    }
+  }
+  return {ok:errs.length===0, msgs:errs};
+}
+ 
+/* Corretor de frase com adjetivo e dados (produção guiada) */
+function checkTarget(raw, cfg){
+  var n=norm(raw), b=cfg.adj, a=ADJ[b], msgs=[];
+  if(wc(n)<4){ return {ok:false, msgs:['Escreva uma frase completa, com sujeito e verbo (is/are). Use o adjetivo <b>'+b+'</b>.']}; }
+  if(has(n,'then') && !has(n,'than')){ msgs.push('Você escreveu <b>then</b> (= então). Para comparar, a palavra é <b>than</b> (= do que).'); }
+  var grammarOk=false;
+  if(cfg.mode==='c'){
+    var forms=[a.c].concat(a.altc||[]);
+    var found=forms.filter(function(f){return has(n,f);})[0];
+    if(found && a.t!=='long' && has(n,'more '+found)){ found=null; }
+    if(found){
+      if(has(n,'the '+found)){ msgs.push('No comparativo não usamos <b>the</b>. Escreva só <b>'+found+' than</b>.'); }
+      else if(!has(n,found+' than')){ msgs.push('Faltou <b>than</b> logo depois de <b>'+found+'</b>. Exemplo: <i>'+found+' than</i>.'); }
+      else { grammarOk=true; }
+    } else {
+      var cands=['more '+a.c,'the '+a.s,'the most '+b,'more '+b,b+'er',b+'r',b+b.slice(-1)+'er',b.slice(0,-1)+'er',b+'ier',a.s,'most '+b];
+      var hit=null;
+      for(var i=0;i<cands.length;i++){ var cd=cands[i]; if(cd===a.c || (a.altc&&a.altc.indexOf(cd)>=0)){continue;} if(has(n,cd)){ hit=cd; break; } }
+      if(hit){ msgs.push(diagC(b,hit,cfg.reveal).msg); }
+      else { msgs.push('Use o adjetivo <b>'+b+'</b> na forma comparativa. '+ruleC(b,cfg.reveal)); }
+    }
+  } else {
+    var sforms=['the '+a.s].concat(a.alts||[]);
+    var sfound=sforms.filter(function(f){return has(n,f);})[0];
+    if(sfound && a.t!=='long' && has(n,'the most '+a.s)){ sfound=null; }
+    if(sfound){
+      if(has(n,sfound+' than')){ msgs.push('No superlativo não usamos <b>than</b>.'); } else { grammarOk=true; }
+    } else {
+      var sc=['the most '+a.s,'most '+a.s,'the more '+b,'the '+a.c,a.c,'the most '+b,'most '+b,'the '+b+'est',b+'est','the '+b+'st','the '+b+b.slice(-1)+'est','the '+b.slice(0,-1)+'est','the '+b+'iest',a.s,'the '+b];
+      var h2=null;
+      for(var j=0;j<sc.length;j++){ var cs=sc[j]; if(cs==='the '+a.s || (a.alts&&a.alts.indexOf(cs)>=0)){continue;} if(has(n,cs)){ h2=cs; break; } }
+      if(h2){ msgs.push(diagS(b,h2,cfg.reveal).msg); }
+      else { msgs.push('Use o adjetivo <b>'+b+'</b> na forma superlativa. '+ruleS(b,cfg.reveal)); }
+    }
+  }
+  if(msgs.length && grammarOk){ grammarOk=false; }
+  if(!grammarOk){ return {ok:false, msgs:msgs}; }
+  /* conferir os dados */
+  var ents=cfg.ents, pos=[];
+  ents.forEach(function(e){ var best=-1; e.re.lastIndex=0; var m=e.re.exec(n); if(m){ best=m.index; } if(best>=0){ pos.push({e:e, i:best}); } });
+  pos.sort(function(p,q){return p.i-q.i;});
+  var val=function(e){ return cfg.dir * e.v[cfg.attr]; };
+  if(cfg.mode==='c'){
+    if(pos.length<2){ return {ok:false, msgs:['A gramática está certa ✅, mas cite os DOIS que você está comparando ('+cfg.pairHint+').']}; }
+    var A=pos[0].e, B=pos[1].e;
+    if(val(A)>val(B)){ return {ok:true, msgs:['Gramática certa e combina com os dados! '+A.name+' '+cfg.label(A)+' x '+B.name+' '+cfg.label(B)+'.']}; }
+    return {ok:false, msgs:['A gramática está certa ✅, mas a frase não combina com os dados: '+A.name+' '+cfg.label(A)+' x '+B.name+' '+cfg.label(B)+'. Quem tem o número maior?']};
+  } else {
+    if(pos.length<1){ return {ok:false, msgs:['A gramática está certa ✅, mas diga QUAL gadget é (use o nome da tabela).']}; }
+    var W=ents.slice().sort(function(p,q){return val(q)-val(p);})[0];
+    if(pos[0].e===W){ return {ok:true, msgs:['Gramática certa e combina com a tabela! '+W.name+': '+cfg.label(W)+'.']}; }
+    return {ok:false, msgs:['A gramática está certa ✅, mas confira a tabela: '+pos[0].e.name+' tem '+cfg.label(pos[0].e)+'. Ele é mesmo o primeiro do ranking? Olhe a coluna de novo.']};
+  }
+}
+ 
+/* ===================== CONSTRUTORES DE EXERCÍCIOS ===================== */
+function buildVocab(boxId, words){
+  var box=document.getElementById(boxId);
+  words.forEach(function(w){
+    var bt=el('button',{type:'button'},'<span>'+w[1]+'</span>'+esc(w[0]));
+    bt.addEventListener('click',function(){ say(w[0]); });
+    box.appendChild(bt);
+  });
+}
+function buildDictation(boxId, group, words){
+  var box=document.getElementById(boxId);
+  box.appendChild(el('h3',null,'🎧 Ditado: ouça e escreva'));
+  words.forEach(function(w,idx){
+    var tries=0;
+    var q=el('div',{class:'q'});
+    var row=el('div',{class:'row'});
+    var play=el('button',{type:'button',class:'btn ghost'},'🔊 Palavra '+(idx+1));
+    var inp=el('input',{type:'text',class:'inline',autocomplete:'off',autocapitalize:'off',spellcheck:'false','aria-label':'Palavra '+(idx+1)});
+    var ok=el('button',{type:'button',class:'btn'},'Verificar');
+    var fb=el('div',{class:'fb'});
+    play.addEventListener('click',function(){ say(w); });
+    inp.addEventListener('keydown',function(e){ if(e.key==='Enter'){ ok.click(); } });
+    ok.addEventListener('click',function(){
+      var x=norm(inp.value).replace(/\s/g,''), t=w.toLowerCase().replace(/\s/g,'');
+      if(!x){ showFb(fb,'warn','Escreva a palavra que você ouviu.'); return; }
+      tries++;
+      if(x===t){ showFb(fb,'ok','✅ Correto: '+w+'!'); mark(group,'d'+idx,tries===1); inp.disabled=true; ok.disabled=true; return; }
+      if(tries===1){ showFb(fb,'bad','❌ Ainda não.', (lev(x,t)<=2?'Você está perto! ':'')+'Ouça de novo, devagar, e preste atenção nas letras.'); }
+      else { showFb(fb,'bad','❌ A palavra é: '+w, 'Agora escreva ela certinho para fixar.'); }
+    });
+    row.appendChild(play); row.appendChild(inp); row.appendChild(ok);
+    q.appendChild(row); q.appendChild(fb); box.appendChild(q);
+  });
+}
+function buildMC(boxId, group, items){
+  var box=document.getElementById(boxId);
+  items.forEach(function(it,idx){
+    var q=el('div',{class:'q'});
+    q.appendChild(el('div',{class:'stem'},'<b>'+(idx+1)+'.</b> '+it.q));
+    var opts=el('div',{class:'opts'}); var fb=el('div',{class:'fb'}); var tries=0, solved=false;
+    it.o.forEach(function(op){
+      var b=el('button',{type:'button',class:'opt'},esc(op[0]));
+      b.addEventListener('click',function(){
+        if(solved){ return; }
+        tries++;
+        if(op[1]){
+          solved=true; b.classList.add('right');
+          Array.prototype.forEach.call(opts.children,function(c){c.disabled=true;});
+          var others=it.o.filter(function(o){return !o[1];}).map(function(o){return '<li><b>'+esc(o[0])+'</b>: '+o[2]+'</li>';}).join('');
+          showFb(fb,'ok','✅ Certo! '+op[2], 'Por que as outras estão erradas:<ul>'+others+'</ul>');
+          mark(group,'m'+idx,tries===1);
+        } else {
+          b.classList.add('wrong'); b.disabled=true;
+          showFb(fb,'bad','❌ "'+esc(op[0])+'" não. ', op[2]+' Tente outra opção.');
+        }
+      });
+      opts.appendChild(b);
+    });
+    q.appendChild(opts); q.appendChild(fb); box.appendChild(q);
+  });
+}
+function buildTyped(boxId, group, items, mode){
+  var box=document.getElementById(boxId);
+  items.forEach(function(it,idx){
+    var tries=0;
+    var q=el('div',{class:'q'});
+    var parts=it.s.split('___');
+    var stem=el('div',{class:'stem'});
+    stem.innerHTML='<b>'+(idx+1)+'.</b> '+esc(parts[0]);
+    var inp=el('input',{type:'text',class:'inline',autocomplete:'off',autocapitalize:'off',spellcheck:'false','aria-label':'Resposta '+(idx+1)});
+    stem.appendChild(inp);
+    stem.appendChild(document.createTextNode(parts[1]+' ('+it.a+')'));
+    inp.addEventListener('keydown',function(e){ if(e.key==='Enter'){ ok.click(); } });
+    var row=el('div',{class:'row'}); var ok=el('button',{type:'button',class:'btn'},'Verificar'); row.appendChild(ok);
+    var fb=el('div',{class:'fb'});
+    ok.addEventListener('click',function(){
+      if(!norm(inp.value)){ showFb(fb,'warn','Escreva sua resposta antes de verificar.'); return; }
+      tries++;
+      var r = mode==='c' ? diagC(it.a, inp.value, tries>=2) : diagS(it.a, inp.value, tries>=2);
+      if(r.ok){ showFb(fb,'ok','✅ Correto!', r.msg); mark(group,'t'+idx,tries===1); inp.disabled=true; ok.disabled=true; }
+      else { showFb(fb,'bad','❌ Ainda não.', r.msg + (tries>=2?' Escreva a resposta certa para fixar.':' Tente de novo.')); }
+    });
+    q.appendChild(stem); q.appendChild(row); q.appendChild(fb); box.appendChild(q);
+  });
+}
+function buildFix(boxId, group, items){
+  var box=document.getElementById(boxId);
+  items.forEach(function(it,idx){
+    var tries=0;
+    var q=el('div',{class:'q'});
+    q.appendChild(el('div',{class:'stem'},'<b>'+(idx+1)+'.</b> ❌ <span class="en">'+esc(it.wrong)+'</span>'));
+    var ta=el('textarea',{rows:'2',placeholder:'Escreva a frase corrigida aqui',autocapitalize:'sentences',spellcheck:'false'});
+    var row=el('div',{class:'row',style:'margin-top:8px'}); var ok=el('button',{type:'button',class:'btn'},'Verificar'); row.appendChild(ok);
+    var fb=el('div',{class:'fb'});
+    ok.addEventListener('click',function(){
+      var n=norm(ta.value);
+      if(!n){ showFb(fb,'warn','Escreva a frase inteira corrigida.'); return; }
+      tries++;
+      if(n===norm(it.wrong)){ showFb(fb,'bad','❌ A frase está igual à original.', 'Procure o erro: '+it.hint); return; }
+      var g=checkFree(ta.value,'c');
+      var okKey = has(n,it.key) && g.ok;
+      if(okKey){
+        var tips=styleTips(ta.value);
+        showFb(fb,'ok','✅ Corrigido!', it.why+(tips.length?' <br>Dica de escrita: '+tips.join(' '):''));
+        mark(group,'f'+idx,tries===1); ta.disabled=true; ok.disabled=true;
+      } else {
+        var msg = g.msgs.length ? g.msgs.join('<br>') : 'Sua frase ainda não tem a correção esperada. '+it.hint;
+        if(tries>=2){ msg += '<br>Resposta: <b>'+esc(it.right)+'</b> — escreva-a para fixar.'; }
+        showFb(fb,'bad','❌ Ainda não.', msg);
+      }
+    });
+    q.appendChild(ta); q.appendChild(row); q.appendChild(fb); box.appendChild(q);
+  });
+}
+function buildProd(boxId, group, items){
+  var box=document.getElementById(boxId);
+  items.forEach(function(it,idx){
+    var tries=0;
+    var q=el('div',{class:'q'});
+    q.appendChild(el('div',{class:'stem'},'<b>'+(idx+1)+'.</b> '+it.prompt));
+    var ta=el('textarea',{rows:'2',placeholder:it.ph,autocapitalize:'sentences',spellcheck:'false'});
+    var row=el('div',{class:'row',style:'margin-top:8px'}); var ok=el('button',{type:'button',class:'btn'},'Verificar'); row.appendChild(ok);
+    var fb=el('div',{class:'fb'});
+    ok.addEventListener('click',function(){
+      if(!norm(ta.value)){ showFb(fb,'warn','Escreva sua frase antes de verificar.'); return; }
+      tries++;
+      it.cfg.reveal = tries>=2;
+      var r=checkTarget(ta.value,it.cfg);
+      if(r.ok){
+        var tips=styleTips(ta.value);
+        showFb(fb,'ok','✅ Muito bem!', r.msgs.join(' ')+(tips.length?'<br>Dica de escrita: '+tips.join(' '):''));
+        mark(group,'p'+idx,tries===1); addSentence(it.label, ta.value.trim()); ta.disabled=true; ok.disabled=true;
+      } else { showFb(fb,'bad','❌ Ainda não.', r.msgs.join('<br>')+' Reescreva e verifique de novo.'); }
+    });
+    q.appendChild(ta); q.appendChild(row); q.appendChild(fb); box.appendChild(q);
+  });
+}
+function buildFree(boxId, group, items){
+  var box=document.getElementById(boxId);
+  items.forEach(function(it,idx){
+    var tries=0;
+    var q=el('div',{class:'q'});
+    q.appendChild(el('div',{class:'stem'},'<b>'+(idx+1)+'.</b> '+it.prompt));
+    var ta=el('textarea',{rows:'2',placeholder:it.ph,autocapitalize:'sentences',spellcheck:'false'});
+    var row=el('div',{class:'row',style:'margin-top:8px'}); var ok=el('button',{type:'button',class:'btn'},'Verificar'); row.appendChild(ok);
+    var fb=el('div',{class:'fb'});
+    ok.addEventListener('click',function(){
+      if(!norm(ta.value)){ showFb(fb,'warn','Escreva sua frase antes de verificar.'); return; }
+      tries++;
+      var r=checkFree(ta.value,it.mode);
+      if(r.ok){
+        var tips=styleTips(ta.value);
+        showFb(fb,'ok','✅ Frase aceita!', (it.mode==='c'?'Você usou o comparativo com than. ':'Você usou o superlativo com the. ')+'Peça para um colega ler a sua frase.'+(tips.length?'<br>Dica de escrita: '+tips.join(' '):''));
+        mark(group,'l'+idx,tries===1); addSentence(it.label, ta.value.trim()); ta.disabled=true; ok.disabled=true;
+      } else { showFb(fb,'bad','❌ Ainda não.', r.msgs.join('<br>')+' Reescreva e verifique de novo.'); }
+    });
+    q.appendChild(ta); q.appendChild(row); q.appendChild(fb); box.appendChild(q);
+  });
+}
+ 
+/* ===================== CONTEÚDO · AULA 1 ===================== */
+buildVocab('voc1',[['Robot','🤖'],['Calculations','🧮'],['Accurate','🎯'],['Factory','🏭'],['Friendlier','😊'],['Strength','💪']]);
+buildDictation('dict1','a1_dit',['Robot','Factory','Strength']);
+buildMC('mc1','a1_mc',[
+  {q:'Today is ______ than yesterday. (hot)', o:[
+    ['hotter',true,'"hot" é curto e termina em consoante-vogal-consoante (h-o-t): dobra o t e acrescenta -er.'],
+    ['more hot',false,'"hot" tem uma sílaba só. Adjetivo curto não usa more.'],
+    ['hoter',false,'Faltou dobrar o t. Em consoante-vogal-consoante, dobramos a última letra: hot → hotter.']]},
+  {q:'This book is ______ than the other one. (interesting)', o:[
+    ['interestinger',false,'Essa palavra não existe! Adjetivo longo não recebe -er.'],
+    ['more interesting',true,'"interesting" é longo (in-te-res-ting). Adjetivo longo usa more + adjetivo + than.'],
+    ['the most interesting',false,'Isso é superlativo (o mais de todos). A frase tem than e compara só dois livros, então é comparativo.']]},
+  {q:'That movie was ______ than I expected. (funny)', o:[
+    ['more funny',false,'"funny" é curto e termina em -y. Não usa more: fica funnier.'],
+    ['funnyer',false,'Faltou trocar o y por i: funny → funnier.'],
+    ['funnier',true,'"funny" termina em -y: troca o y por i e acrescenta -er.']]},
+  {q:'Humans are ______ than robots at understanding emotions. (good)', o:[
+    ['better',true,'"good" é irregular: good → better → the best.'],
+    ['more good',false,'"good" é irregular. Ele não usa more: vira outra palavra (better).'],
+    ['gooder',false,'Essa palavra não existe. "good" é irregular: good → better.']]},
+  {q:'Robots are becoming ______ than ever thanks to new technology. (intelligent)', o:[
+    ['intelligent',false,'Sem more a frase não compara. Quando aparece than, precisamos do comparativo.'],
+    ['intelligenter',false,'Essa palavra não existe! "intelligent" é longo: não recebe -er.'],
+    ['more intelligent',true,'"intelligent" é longo (in-tel-li-gent): more + adjetivo + than.']]},
+  {q:'My phone is ______ than yours. It is very old and slow. (bad)', o:[
+    ['badder',false,'Essa palavra não existe. "bad" é irregular: bad → worse.'],
+    ['worse',true,'"bad" é irregular: bad → worse → the worst.'],
+    ['the worst',false,'"the worst" é superlativo (o pior de TODOS). A frase compara só dois celulares (o meu e o seu) com than.']]}
+]);
+buildTyped('ty1','a1_ty',[
+  {s:'I am ___ than my brother.',a:'tall'},
+  {s:'Pizza is ___ than salad.',a:'delicious'},
+  {s:'English is ___ than Math.',a:'easy'},
+  {s:'This phone is ___ than that one.',a:'cheap'},
+  {s:'Movies are ___ than books.',a:'interesting'},
+  {s:'My grade in English is ___ than my grade in Math.',a:'good'},
+  {s:'This restaurant is ___ than the one we went to last week.',a:'bad'},
+  {s:'Today is ___ than yesterday.',a:'cold'},
+  {s:'An elephant is ___ than a dog.',a:'big'},
+  {s:'Airplanes are ___ than cars.',a:'fast'}
+],'c');
+buildFix('fix1','a1_fix',[
+  {wrong:'Robots are more fast than humans.', right:'Robots are faster than humans.', key:'faster than', hint:'"fast" é curto. Ele usa more?', why:'"fast" é curto: faster than (sem more).'},
+  {wrong:'Humans are creativer than robots.', right:'Humans are more creative than robots.', key:'more creative than', hint:'"creative" é curto ou longo?', why:'"creative" é longo (cre-a-tive): more creative than.'},
+  {wrong:'My dog is biger than my cat.', right:'My dog is bigger than my cat.', key:'bigger than', hint:'"big" termina em consoante-vogal-consoante (b-i-g).', why:'"big" dobra o g: bigger than.'},
+  {wrong:'This exercise is easyer than the last one.', right:'This exercise is easier than the last one.', key:'easier than', hint:'"easy" termina em -y.', why:'"easy" troca o y por i: easier than.'},
+  {wrong:'Brazil is more big then Argentina.', right:'Brazil is bigger than Argentina.', key:'bigger than', hint:'São dois erros: olhe o adjetivo e a palavra then.', why:'Dois erros corrigidos: "big" é curto e dobra o g (bigger), e then vira than.'}
+]);
+var RH = [
+  {name:'Robots', re:/\brobots?\b/g, v:{speed:9, strength:9, creativity:3, accuracy:10}},
+  {name:'Humans', re:/\b(humans?|people|persons?)\b/g, v:{speed:4, strength:5, creativity:9, accuracy:6}}
+];
+(function(){
+  var t=document.getElementById('vsTable');
+  var rows=[['Speed ⚡','speed'],['Strength 💪','strength'],['Creativity 🎨','creativity'],['Accuracy 🎯','accuracy']];
+  t.innerHTML='<div></div><div class="h">🤖 Robots</div><div class="h">🧑 Humans</div>';
+  rows.forEach(function(r){
+    t.innerHTML+='<div>'+r[0]+'</div><div><div class="bar"><i style="width:'+(RH[0].v[r[1]]*10)+'%"></i></div><small>'+RH[0].v[r[1]]+'/10</small></div><div><div class="bar"><i style="width:'+(RH[1].v[r[1]]*10)+'%"></i></div><small>'+RH[1].v[r[1]]+'/10</small></div>';
+  });
+})();
+function rhCfg(adj, attr){ return {mode:'c', adj:adj, attr:attr, dir:1, ents:RH, pairHint:'robots e humans', label:function(e){return e.v[attr]+'/10';}}; }
+buildProd('prod1','a1_prod',[
+  {prompt:'Use <b>fast</b> (speed ⚡).', ph:'Ex.: ___ are ___ than ___.', label:'Aula 1 · fast', cfg:rhCfg('fast','speed')},
+  {prompt:'Use <b>strong</b> (strength 💪).', ph:'Escreva sua frase…', label:'Aula 1 · strong', cfg:rhCfg('strong','strength')},
+  {prompt:'Use <b>creative</b> (creativity 🎨).', ph:'Escreva sua frase…', label:'Aula 1 · creative', cfg:rhCfg('creative','creativity')},
+  {prompt:'Use <b>accurate</b> (accuracy 🎯).', ph:'Escreva sua frase…', label:'Aula 1 · accurate', cfg:rhCfg('accurate','accuracy')}
+]);
+buildFree('free1','a1_free',[
+  {mode:'c', prompt:'Sua frase no comparativo (com <b>than</b>):', ph:'Ex.: My sister is taller than me.', label:'Aula 1 · minha frase'}
+]);
+ 
+/* ===================== CONTEÚDO · AULA 2 ===================== */
+buildVocab('voc2',[['Smartwatch','⌚'],['Gadget','🔌'],['Wireless','📶'],['Headphones','🎧'],['Smart glasses','🕶️'],['Laptop','💻']]);
+buildDictation('dict2','a2_dit',['Gadget','Laptop','Headphones']);
+buildMC('mc2','a2_mc',[
+  {q:'This is the ______ phone in the store. (fast)', o:[
+    ['most fast',false,'"fast" é curto. Adjetivo curto não usa most.'],
+    ['fastest',true,'"fast" é curto: the + fast + -est. "in the store" mostra que é o mais rápido de todos.'],
+    ['faster',false,'"faster" é comparativo (2 coisas). "in the store" fala de todos os celulares da loja: superlativo.']]},
+  {q:'This is the ______ laptop of all. (expensive)', o:[
+    ['most expensive',true,'"expensive" é longo (ex-pen-sive): the most + adjetivo. "of all" = de todos.'],
+    ['expensivest',false,'Essa palavra não existe. Adjetivo longo não recebe -est.'],
+    ['more expensive',false,'"more" é do comparativo. "of all" pede superlativo: the most.']]},
+  {q:'This movie is ______ the last one.', o:[
+    ['the best',false,'"the best" = o melhor de TODOS. Aqui são só dois filmes: este e o último.'],
+    ['better than',true,'Dois filmes (este e o último): comparativo. good → better than.'],
+    ['more good than',false,'"good" é irregular e não usa more: better than.']]},
+  {q:'This is ______ day of my life!', o:[
+    ['better than',false,'Não há um segundo elemento depois de than. "of my life" = todos os dias da sua vida.'],
+    ['the goodest',false,'Essa palavra não existe. good → better → the best.'],
+    ['the best',true,'"of my life" = de todos os dias da vida: superlativo. good → the best.']]},
+  {q:'That was ______ test I\'ve ever taken.', o:[
+    ['the worst',true,'"I\'ve ever taken" = de todas as provas que já fiz: superlativo. bad → the worst.'],
+    ['worse than',false,'Não há segundo elemento para comparar. "I\'ve ever taken" pede superlativo.'],
+    ['the baddest',false,'Essa palavra não existe na norma padrão. bad → worse → the worst.']]},
+  {q:'This charger is ______ yours. (cheap)', o:[
+    ['the cheapest',false,'Aqui comparamos só dois carregadores (este e o seu). Superlativo é para um grupo.'],
+    ['cheaper than',true,'Dois carregadores: comparativo. cheap → cheaper than.'],
+    ['more cheap than',false,'"cheap" é curto. Não usa more: cheaper than.']]},
+  {q:'My smartwatch is the ______ in the class. (popular)', o:[
+    ['popularest',false,'Essa palavra não existe. "popular" é longo (po-pu-lar): the most popular.'],
+    ['more popular',false,'"more" é do comparativo. "in the class" = a turma toda: superlativo.'],
+    ['most popular',true,'"popular" é longo: the most popular. "in the class" mostra o grupo.']]}
+]);
+buildTyped('ty2','a2_ty',[
+  {s:'This is ___ book I read this year.',a:'interesting'},
+  {s:'That was ___ movie I\'ve ever seen!',a:'funny'},
+  {s:'It\'s ___ day of the year.',a:'cold'},
+  {s:'Beatriz is ___ girl in the class.',a:'tall'},
+  {s:'That was ___ question of the test.',a:'easy'},
+  {s:'The blue whale is ___ animal in the world.',a:'big'},
+  {s:'Pelé is one of ___ players in history.',a:'good'},
+  {s:'Monday was ___ day of my week.',a:'bad'}
+],'s');
+var GAD = [
+  {name:'Laptop', re:/\b(laptops?|notebooks?|computers?)\b/g, v:{price:3500, weight:1500, votes:6}},
+  {name:'Smartwatch', re:/\b(smart ?watch(es)?|watch(es)?)\b/g, v:{price:900, weight:40, votes:12}},
+  {name:'Headphones', re:/\b(headphones?|headsets?)\b/g, v:{price:250, weight:200, votes:15}},
+  {name:'Smart glasses', re:/\bglasses\b/g, v:{price:2000, weight:50, votes:3}}
+];
+function fmtV(attr, v){ if(attr==='price'){ return 'R$ '+v.toLocaleString('en-US'); } if(attr==='weight'){ return v>=1000 ? (v/1000)+' kg' : v+' g'; } return v+' votes'; }
+function gCfg(mode, adj, attr, dir){ return {mode:mode, adj:adj, attr:attr, dir:dir, ents:GAD, pairHint:'dois gadgets da tabela', label:function(e){return fmtV(attr,e.v[attr]);}}; }
+buildProd('prod2','a2_prod',[
+  {prompt:'Superlativo com <b>expensive</b>: qual é o mais caro?', ph:'Ex.: The ___ is the ___ gadget.', label:'Aula 2 · expensive', cfg:gCfg('s','expensive','price',1)},
+  {prompt:'Superlativo com <b>cheap</b>: qual é o mais barato?', ph:'Escreva sua frase…', label:'Aula 2 · cheap', cfg:gCfg('s','cheap','price',-1)},
+  {prompt:'Superlativo com <b>light</b> (leve): qual é o mais leve?', ph:'Escreva sua frase…', label:'Aula 2 · light', cfg:gCfg('s','light','weight',-1)},
+  {prompt:'Superlativo com <b>popular</b>: qual teve mais votos?', ph:'Escreva sua frase…', label:'Aula 2 · popular', cfg:gCfg('s','popular','votes',1)},
+  {prompt:'Agora um <b>comparativo</b> com <b>heavy</b> (pesado): compare dois gadgets.', ph:'Ex.: The ___ is heavier than the ___.', label:'Aula 2 · heavy', cfg:gCfg('c','heavy','weight',1)}
+]);
+buildFree('ticket','ticket',[
+  {mode:'c', prompt:'Uma frase no <b>comparativo</b> (com than):', ph:'Ex.: My school is bigger than my house.', label:'Ticket · comparativo'},
+  {mode:'s', prompt:'Uma frase no <b>superlativo</b> (com the):', ph:'Ex.: My mom is the best cook in my family.', label:'Ticket · superlativo'}
+]);
+ 
+/* ===================== SARESP (Peer Instruction) ===================== */
+var SAR = [
+  {txt:'<div class="text en"><b>Robots and Humans</b><br>Robots are faster than humans at calculations. They are also stronger, so they can work in factories all day. But humans are more creative, and they understand emotions better than robots.</div>',
+   q:'De acordo com o texto, os humanos são…', o:[
+    ['A) faster than robots.',false,'O texto diz o contrário: "Robots are faster than humans".'],
+    ['B) stronger than robots.',false,'O texto diz que os robôs são mais fortes: "They are also stronger".'],
+    ['C) more creative than robots.',true,'Está escrito no texto: "humans are more creative". Encontre a informação e confira!'],
+    ['D) more accurate than robots.',false,'O texto não diz isso sobre os humanos. Cuidado com a resposta que "parece certa" mas não está no texto.']], just:true},
+  {txt:'<div class="tablewrap"><table><tr><th>Gadget</th><th>Price</th></tr><tr><td>Smartwatch</td><td>R$ 900</td></tr><tr><td>Headphones</td><td>R$ 250</td></tr><tr><td>Laptop</td><td>R$ 3,500</td></tr><tr><td>Smart glasses</td><td>R$ 2,000</td></tr></table></div>',
+   q:'Qual frase está de acordo com a tabela?', o:[
+    ['A) The headphones are the most expensive gadget.',false,'Os headphones custam R$ 250: são os mais BARATOS (the cheapest).'],
+    ['B) The laptop is the most expensive gadget.',true,'O laptop custa R$ 3,500, o maior preço da tabela: the most expensive.'],
+    ['C) The smartwatch is cheaper than the headphones.',false,'Smartwatch R$ 900 x headphones R$ 250: o smartwatch é mais CARO (more expensive).'],
+    ['D) The smart glasses are more expensive than the laptop.',false,'Smart glasses R$ 2,000 x laptop R$ 3,500: os óculos são mais baratos.']]},
+  {txt:'',
+   q:'It\'s 35 °C today! Today is ______ yesterday.', o:[
+    ['A) hot than',false,'Falta mudar o adjetivo. Com than, usamos o comparativo.'],
+    ['B) hoter than',false,'Faltou dobrar o t (consoante-vogal-consoante): hotter.'],
+    ['C) hotter than',true,'Dois dias (hoje e ontem) + than: comparativo. hot dobra o t: hotter than.'],
+    ['D) the hottest',false,'"the hottest" é superlativo (o mais quente de um grupo). A frase compara só dois dias.']], just:true},
+  {txt:'',
+   q:'"I passed the test! This is ______ day of my life!"', o:[
+    ['A) the best',true,'"of my life" = de todos os dias: superlativo. good → the best.'],
+    ['B) better than',false,'Não existe um segundo elemento para comparar; "of my life" fala de todos os dias.'],
+    ['C) the goodest',false,'Essa palavra não existe. good é irregular: better / the best.'],
+    ['D) more good',false,'good é irregular e não usa more nem most.']]},
+  {txt:'<div class="text en">Ana: My new phone is lighter and faster than my old one, and the camera is the best I\'ve ever had! 😍<br>Leo: Wow! So are you going to sell the old one?<br>Ana: Yes! 😄</div>',
+   q:'Pela conversa, podemos concluir que Ana…', o:[
+    ['A) não gosta do celular novo.',false,'Ela elogia o celular novo (lighter, faster, the best camera) e usa 😍. Isso mostra que ela gosta.'],
+    ['B) quer comprar um celular mais pesado.',false,'Ela gosta que o novo é lighter (mais leve). Nada indica que ela quer um mais pesado.'],
+    ['C) tem o celular mais barato da loja.',false,'A conversa não fala de preço nem de loja.'],
+    ['D) acha o celular novo melhor que o antigo.',true,'Ela não escreve "better", mas compara: o novo é mais leve, mais rápido e tem a melhor câmera. Por isso ela vai vender o antigo. Isso é INFERÊNCIA: entender o que não está escrito com todas as letras.']], just:true},
+  {txt:'<div class="text en"><b>The Tortoise and the Hare</b><br>The hare ran fast. The tortoise walked slowly. The hare stopped to rest. "I have time," he thought, and he went to sleep. The tortoise kept walking… step by step… slow but steady. The hare woke up and ran fast again. But it was too late. The tortoise crossed the finish line first!</div>',
+   q:'Complete: "The hare was ______ the tortoise, but the tortoise won the race."', o:[
+    ['A) faster than',true,'O coelho corria rápido e a tartaruga andava devagar: faster than. Mesmo assim, ela venceu!'],
+    ['B) slower than',false,'O texto diz "The hare ran fast" e "The tortoise walked slowly". O coelho era mais rápido.'],
+    ['C) the fastest',false,'"the fastest" é superlativo (o mais rápido de um grupo). A frase compara só dois animais: o coelho e a tartaruga.'],
+    ['D) more fast than',false,'fast é curto: faster than (sem more).']]},
+  {txt:'',
+   q:'Qual frase compara apenas DOIS elementos?', o:[
+    ['A) Mount Everest is the highest mountain in the world.',false,'"the highest … in the world" é superlativo: compara com todas as montanhas.'],
+    ['B) This is the most popular game in my school.',false,'"the most popular … in my school" é superlativo: compara com todos os jogos.'],
+    ['C) She is the best student in the class.',false,'"the best … in the class" é superlativo: compara com a turma toda.'],
+    ['D) My cat is smaller than my dog.',true,'"smaller than" é comparativo: compara só o gato e o cachorro.']]},
+  {txt:'<div class="text en">(Use o texto da questão 6: <b>The Tortoise and the Hare</b>.)</div>',
+   q:'Por que a tartaruga venceu a corrida?', o:[
+    ['A) Porque ela corria mais rápido que o coelho.',false,'O texto diz "The tortoise walked slowly". Ela era mais lenta.'],
+    ['B) Porque o coelho se perdeu no caminho.',false,'O texto não diz isso. O coelho dormiu; ele não se perdeu.'],
+    ['C) Porque o coelho parou para descansar e dormiu, e ela continuou andando.',true,'O texto mostra: "he went to sleep" e "The tortoise kept walking". Ela foi devagar, mas sem parar.'],
+    ['D) Porque a corrida foi na água.',false,'O texto não fala de água. Responda só com o que o texto mostra.']], just:true}
+];
+(function(){
+  var box=document.getElementById('sar');
+  SAR.forEach(function(it,idx){
+    var st = S.sar[idx] || {};
+    var card=el('div',{class:'card'});
+    card.appendChild(el('span',{class:'tag'},'Questão '+(idx+1)+' de '+SAR.length));
+    if(it.txt){ card.appendChild(el('div',null,it.txt)); }
+    card.appendChild(el('div',{class:'stem',style:'margin-top:8px'},'<b>'+esc(it.q)+'</b>'));
+    var opts=el('div',{class:'opts col'}); var fb=el('div',{class:'fb'});
+    var phase = 1;
+    var btns=[];
+    var justBox=el('div',{style:'margin-top:10px;display:none'});
+    it.o.forEach(function(op,oi){
+      var b=el('button',{type:'button',class:'opt'},esc(op[0]));
+      b.addEventListener('click',function(){
+        if(phase===1){
+          st.v1=oi; S.sar[idx]=st; save();
+          btns.forEach(function(x){x.classList.remove('sel'); x.disabled=true;}); b.classList.add('sel');
+          fb.className='fb show warn';
+          fb.innerHTML='<b>1º voto registrado: '+esc(op[0].slice(0,2))+'</b><span class="why">👥 Agora explique para seu colega POR QUE você escolheu essa alternativa. Ouça o motivo dele também. Depois, vote de novo (pode mudar ou manter).</span>';
+          var again=el('button',{type:'button',class:'btn alt',style:'margin-top:8px'},'Votar de novo');
+          again.addEventListener('click',function(){ phase=2; btns.forEach(function(x){x.disabled=false; x.classList.remove('sel');}); fb.className='fb show warn'; fb.innerHTML='<b>2º voto:</b> <span class="why">escolha sua resposta final.</span>'; });
+          fb.appendChild(el('div')).appendChild(again);
+        } else if(phase===2){
+          phase=3; st.v2=oi; S.sar[idx]=st; save();
+          btns.forEach(function(x,xi){ x.disabled=true; if(it.o[xi][1]){x.classList.add('right');} else if(xi===oi){x.classList.add('wrong');} });
+          var list=it.o.map(function(o){ return '<li>'+(o[1]?'✅':'❌')+' <b>'+esc(o[0])+'</b> '+o[2]+'</li>'; }).join('');
+          var v1ok=it.o[st.v1][1], v2ok=op[1];
+          var head = v2ok ? (v1ok?'✅ Acertou nos dois votos!':'✅ Acertou no 2º voto! A conversa com o colega ajudou.') : (v1ok?'❌ Você acertou no 1º voto, mas mudou. Leia por quê.':'❌ Ainda não. Leia a explicação de cada alternativa.');
+          showFb(fb, v2ok?'ok':'bad', head, '<ul>'+list+'</ul>');
+          if(it.just){ justBox.style.display='block'; }
+        }
+      });
+      btns.push(b); opts.appendChild(b);
+    });
+    if(it.just){
+      justBox.appendChild(el('div',{class:'small'},'✍️ <b>Explique com suas palavras</b> (em português): qual pista do texto ou da frase mostra a resposta certa?'));
+      var ta=el('textarea',{rows:'2',placeholder:'Ex.: A pista é…'});
+      var jb=el('button',{type:'button',class:'btn',style:'margin-top:8px'},'Salvar explicação');
+      var jfb=el('div',{class:'fb'});
+      jb.addEventListener('click',function(){
+        var n=norm(ta.value);
+        if(wc(n)<5){ showFb(jfb,'warn','Escreva pelo menos uma frase (5 palavras ou mais).','Exemplo: "A pista é a palavra than, que compara duas coisas."'); return; }
+        st.just=ta.value.trim(); S.sar[idx]=st; save(); addSentence('SARESP Q'+(idx+1)+' · explicação', st.just);
+        showFb(jfb,'ok','✅ Explicação salva!','Explicar o porquê é o que faz a gente aprender de verdade.'); ta.disabled=true; jb.disabled=true;
+      });
+      justBox.appendChild(ta); justBox.appendChild(jb); justBox.appendChild(jfb);
+    }
+    card.appendChild(opts); card.appendChild(fb); card.appendChild(justBox);
+    box.appendChild(card);
+  });
+})();
+ 
+/* ===================== RESULTADO ===================== */
+var GROUPS=[['a1_dit','Aula 1 · Ditado',3],['a1_mc','Aula 1 · Escolha e entenda',6],['a1_ty','Aula 1 · Escreva o comparativo',10],['a1_fix','Aula 1 · Detetive do erro',5],['a1_prod','Aula 1 · Robot x Human',4],['a1_free','Aula 1 · Sua frase',1],['a2_dit','Aula 2 · Ditado',3],['a2_mc','Aula 2 · Escolha e entenda',7],['a2_ty','Aula 2 · Escreva o superlativo',8],['a2_prod','Aula 2 · Ranking dos gadgets',5],['ticket','Ticket de saída',2]];
+function resultText(){
+  var lines=[], tot=0, first=0, done=0;
+  lines.push('Nome: '+(S.nome||'—')+' | Turma: '+(S.turma||'—'));
+  GROUPS.forEach(function(g){
+    var sc=S.score[g[0]]||{}, d=Object.keys(sc).length, f=Object.keys(sc).filter(function(k){return sc[k];}).length;
+    tot+=g[2]; done+=d; first+=f;
+    lines.push(g[1]+': '+d+'/'+g[2]+' feitas ('+f+' de primeira)');
+  });
+  var v1=0,v2=0,ans=0;
+  SAR.forEach(function(it,i){ var st=S.sar[i]; if(st && st.v2!==undefined){ ans++; if(it.o[st.v1][1]){v1++;} if(it.o[st.v2][1]){v2++;} } });
+  lines.push('SARESP: '+ans+'/'+SAR.length+' respondidas | 1º voto: '+v1+' acertos | 2º voto: '+v2+' acertos');
+  return {lines:lines, tot:tot, done:done, first:first, v1:v1, v2:v2, ans:ans};
+}
+function renderRes(){
+  var r=resultText();
+  document.getElementById('resName').textContent=(S.nome||'Seu nome')+(S.turma?' · '+S.turma:'');
+  var h='<div class="score">'+r.done+' / '+r.tot+'</div><div class="muted small">atividades concluídas ('+r.first+(r.first===1?' certa':' certas')+' na primeira tentativa)</div>';
+  h+='<div class="tablewrap" style="margin-top:12px"><table><tr><th>Missão</th><th>Feitas</th><th>De primeira</th></tr>';
+  GROUPS.forEach(function(g){ var sc=S.score[g[0]]||{}, d=Object.keys(sc).length, f=Object.keys(sc).filter(function(k){return sc[k];}).length; h+='<tr><td>'+g[1]+'</td><td>'+(d===g[2]?'<span class="done">'+d+'/'+g[2]+' ✔</span>':d+'/'+g[2])+'</td><td>'+f+'</td></tr>'; });
+  h+='<tr><td>Desafio SARESP</td><td>'+r.ans+'/'+SAR.length+'</td><td>1º voto: '+r.v1+' · 2º voto: '+r.v2+'</td></tr></table></div>';
+  if(S.sent.length){ h+='<h3 style="margin-top:14px">✍️ Frases que eu escrevi</h3><ul>'+S.sent.map(function(x){return '<li><span class="muted small">'+esc(x.label)+':</span> '+esc(x.text)+'</li>';}).join('')+'</ul>'; }
+  document.getElementById('resBody').innerHTML=h;
+}
+ 
+/* ===================== NAVEGAÇÃO E CONTROLES ===================== */
+function go(p){
+  document.querySelectorAll('section.page').forEach(function(s){ s.classList.toggle('on', s.id===p); });
+  document.querySelectorAll('#tabs button').forEach(function(b){ b.classList.toggle('on', b.getAttribute('data-p')===p); });
+  if(p==='res'){ renderRes(); }
+  window.scrollTo(0,0);
+}
+document.querySelectorAll('#tabs button').forEach(function(b){ b.addEventListener('click',function(){ go(b.getAttribute('data-p')); }); });
+document.querySelectorAll('[data-go]').forEach(function(b){ b.addEventListener('click',function(){ go(b.getAttribute('data-go')); }); });
+var nome=document.getElementById('nome'), turma=document.getElementById('turma');
+nome.value=S.nome||''; turma.value=S.turma||'';
+nome.addEventListener('input',function(){ S.nome=nome.value.trim(); save(); });
+turma.addEventListener('input',function(){ S.turma=turma.value.trim(); save(); });
+document.getElementById('startBtn').addEventListener('click',function(){
+  if(!nome.value.trim()){ showFb(document.getElementById('startFb'),'warn','Escreva seu nome primeiro.','Assim o professor sabe de quem é o resultado.'); nome.focus(); return; }
+  go('a1');
+});
+document.getElementById('copyBtn').addEventListener('click',function(){
+  var r=resultText(), txt=r.lines.join('\n');
+  if(S.sent.length){ txt+='\nFrases:\n'+S.sent.map(function(x){return '- '+x.label+': '+x.text;}).join('\n'); }
+  var fb=document.getElementById('copyFb');
+  try{ navigator.clipboard.writeText(txt).then(function(){ showFb(fb,'ok','Copiado!','Cole onde o professor pedir.'); },function(){ showFb(fb,'warn','Não consegui copiar.','Tire um print desta tela.'); }); }
+  catch(e){ showFb(fb,'warn','Não consegui copiar.','Tire um print desta tela.'); }
+});
+var resetArmed=false;
+document.getElementById('resetBtn').addEventListener('click',function(){
+  var fb=document.getElementById('copyFb');
+  if(!resetArmed){ resetArmed=true; showFb(fb,'warn','Tem certeza?','Toque de novo em "Recomeçar tudo" para apagar suas respostas deste tablet.'); return; }
+  try{ localStorage.removeItem(KEY); }catch(e){}
+  location.reload();
+});
+var big=false;
+try{ big = localStorage.getItem(KEY+'_big')==='1'; }catch(e){}
+function applyBig(){ document.documentElement.style.setProperty('--fs', big?'21px':'17px'); }
+applyBig();
+document.getElementById('bigFont').addEventListener('click',function(){ big=!big; applyBig(); try{ localStorage.setItem(KEY+'_big', big?'1':'0'); }catch(e){} });
+document.getElementById('themeBtn').addEventListener('click',function(){
+  var cur=document.documentElement.getAttribute('data-theme');
+  var dark = cur ? cur==='dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+  document.documentElement.setAttribute('data-theme', dark?'light':'dark');
+});
+document.getElementById('qrBtn').addEventListener('click',function(){
+  var box=document.getElementById('qrbox'); box.classList.toggle('show');
+  var url=location.href.split('#')[0];
+  document.getElementById('qrurl').textContent=url;
+  var q=document.getElementById('qr');
+  if(q.childNodes.length){ return; }
+  function draw(){ try{ new QRCode(q,{text:url,width:240,height:240}); }catch(e){ q.textContent='Não foi possível gerar o QR code. Use o endereço abaixo.'; } }
+  if(window.QRCode){ draw(); return; }
+  var s=document.createElement('script'); s.src='https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js';
+  s.onload=draw; s.onerror=function(){ q.textContent='Sem internet para gerar o QR code. Use o endereço abaixo.'; };
+  document.head.appendChild(s);
+});
+</script>
+</body>
+</html>
+ 
+
