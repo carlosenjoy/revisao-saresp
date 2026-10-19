@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SARESP Inclusão · Inglês</title>
+<meta name="description" content="Atividades acessíveis de Língua Inglesa para o SARESP · estudantes com deficiência intelectual · E.E. José Roberto Friebolin · Prof. Carlos Augusto">
+<style>
+:root{
+  --bg:#fffaf0; --card:#ffffff; --ink:#1d2433; --muted:#5a6273; --line:#e8dfcc;
+  --brand:#2b6cb0; --brand-2:#e6f0fb; --ok:#1e8a4c; --ok-bg:#e3f6ea; --bad:#b45309; --bad-bg:#fff1dc;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15171c; --card:#20242c; --ink:#eef0f4; --muted:#aab0bc; --line:#363b47;
+    --brand:#7db5f0; --brand-2:#1d2b3c; --ok:#5fd394; --ok-bg:#17321f; --bad:#f5b35c; --bad-bg:#3a2a14;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15171c; --card:#20242c; --ink:#eef0f4; --muted:#aab0bc; --line:#363b47;
+  --brand:#7db5f0; --brand-2:#1d2b3c; --ok:#5fd394; --ok-bg:#17321f; --bad:#f5b35c; --bad-bg:#3a2a14;
+}
+*{box-sizing:border-box}
+html{font-size:22px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,"Trebuchet MS",Arial,sans-serif;line-height:1.5}
+header{background:var(--brand);color:#fff;padding:12px 16px;display:flex;align-items:center;gap:10px}
+header h1{font-size:1.05rem;margin:0;flex:1}
+.ic{background:rgba(255,255,255,.22);border:0;color:#fff;border-radius:12px;padding:8px 12px;font-size:1rem;cursor:pointer}
+main{max-width:760px;margin:0 auto;padding:16px}
+.card{background:var(--card);border:2px solid var(--line);border-radius:22px;padding:20px;margin-bottom:16px;text-align:center}
+h2{font-size:1.3rem;margin:.2rem 0 .6rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.mbtn{border:3px solid var(--line);background:var(--card);color:var(--ink);border-radius:22px;padding:18px 10px;font-size:1rem;cursor:pointer;font-weight:700}
+.mbtn .em{display:block;font-size:2.6rem;line-height:1.2}
+.mbtn .st{display:block;color:var(--ok);font-size:.8rem;margin-top:4px}
+.mbtn:hover,.mbtn:focus{border-color:var(--brand);outline:none}
+.word{display:flex;align-items:center;justify-content:center;gap:12px;font-size:1.3rem;font-weight:700;padding:10px;border-bottom:2px dashed var(--line)}
+.word:last-child{border-bottom:0}
+.word .em{font-size:2.4rem}
+.word .pt{font-weight:400;color:var(--muted);font-size:1rem}
+.som{border:0;background:var(--brand-2);color:var(--brand);border-radius:50%;width:54px;height:54px;font-size:1.4rem;cursor:pointer;flex:none}
+.pic{font-size:3.6rem;line-height:1.1;margin:6px 0}
+.texto{background:var(--brand-2);border-radius:16px;padding:12px 16px;font-size:1.1rem;margin:8px 0 14px;text-align:left}
+.perg{font-size:1.15rem;font-weight:700;margin:6px 0 14px}
+.opts{display:grid;gap:12px}
+.opt{border:3px solid var(--line);background:var(--card);color:var(--ink);border-radius:18px;padding:14px;font-size:1.15rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:12px;min-height:72px}
+.opt .em{font-size:2rem}
+.opt.ok{border-color:var(--ok);background:var(--ok-bg)}
+.opt.no{border-color:var(--bad);background:var(--bad-bg);opacity:.75}
+.fb{font-size:1.15rem;font-weight:700;min-height:1.6em;margin-top:12px}
+.fb.ok{color:var(--ok)} .fb.no{color:var(--bad)}
+.dots{display:flex;justify-content:center;gap:8px;margin-bottom:10px}
+.dots span{width:16px;height:16px;border-radius:50%;background:var(--line)}
+.dots span.on{background:var(--brand)} .dots span.feito{background:var(--ok)}
+.btn{border:0;background:var(--brand);color:#fff;border-radius:16px;padding:14px 24px;font-size:1.1rem;font-weight:700;cursor:pointer;margin:6px}
+.btn.sec{background:var(--brand-2);color:var(--brand)}
+.estrelas{font-size:3rem}
+.prof{display:none;text-align:left;background:var(--brand-2);border-left:6px solid var(--brand);border-radius:14px;padding:12px 16px;font-size:.85rem;margin-bottom:16px}
+body.modo-prof .prof{display:block}
+.prof ul{margin:.3rem 0 0;padding-left:1.2rem}
+@media (max-width:520px){html{font-size:19px}}
+@media (prefers-reduced-motion:no-preference){.pop{animation:pop .35s ease}@keyframes pop{0%{transform:scale(.85)}100%{transform:scale(1)}}}
+</style>
+</head>
+<body>
+<header>
+  <h1>🌟 Inglês para o SARESP</h1>
+  <button class="ic" id="tema" aria-label="Mudar tema">🌓</button>
+</header>
+<main id="app"></main>
+
+<script>
+// ============================================================
+// Versão de inclusão · Deficiência Intelectual (D.I.)
+// Prof. Carlos Augusto · E.E. José Roberto Friebolin · 2026
+// Cada missão: palavras (com som) + perguntas de 3 opções.
+// Link do professor: inclusao.html?prof=1
+// ============================================================
+const MISSOES = [
+ { id:"educado", em:"🙏", nome:"Palavras educadas", desc:"Convívio social",
+   palavras:[["🙏","Please","Por favor"],["😊","Thank you","Obrigado"],["😔","Sorry","Desculpa"]],
+   prof:["Descritor: reconhecer expressões de convívio social.","Mostre as palavras com gesto (mão no peito = thank you).","Na lousa: só as 3 palavras com desenho."],
+   q:[
+    {pic:"🎁", t:"Ganhei um presente. Eu digo:", o:[["😊","Thank you"],["😔","Sorry"],["👋","Bye"]], a:0},
+    {pic:"💥", t:"Esbarrei no colega. Eu digo:", o:[["🙏","Please"],["😔","Sorry"],["☀️","Good morning"]], a:1},
+    {pic:"💧", t:"Quero água. Eu peço:", o:[["💧","Water, please"],["👋","Bye, water"],["😔","Sorry, water"]], a:0},
+    {txt:"Thank you for the cake!", t:"A mensagem serve para:", o:[["😊","Agradecer"],["😔","Pedir desculpa"],["😠","Brigar"]], a:0}
+   ]},
+ { id:"oi", em:"👋", nome:"Oi e tchau", desc:"Cumprimentos",
+   palavras:[["👋","Hello / Hi","Oi"],["☀️","Good morning","Bom dia"],["🌙","Good night","Boa noite"],["🚪","Bye","Tchau"]],
+   prof:["Descritor: analisar interação oral (cumprimentos).","Entrada da aula: cumprimente cada aluno em inglês.","Na lousa: ☀️ Good morning · 🌙 Good night."],
+   q:[
+    {pic:"☀️", t:"É de manhã. Eu digo:", o:[["☀️","Good morning"],["🌙","Good night"],["🚪","Bye"]], a:0},
+    {pic:"🛏️", t:"Vou dormir. Eu digo:", o:[["☀️","Good morning"],["🌙","Good night"],["😊","Thank you"]], a:1},
+    {pic:"🚪", t:"Vou embora. Eu digo:", o:[["👋","Hello"],["🚪","Bye"],["🙏","Please"]], a:1}
+   ]},
+ { id:"familia", em:"👨‍👩‍👧", nome:"Minha família", desc:"Vocabulário",
+   palavras:[["👩","Mother","Mãe"],["👨","Father","Pai"],["👦","Brother","Irmão"],["👧","Sister","Irmã"]],
+   prof:["Descritor: reconhecer repertório lexical.","Peça uma foto da família (ou desenho) e nomeie em inglês.","Na lousa: 👩 mother · 👨 father."],
+   q:[
+    {pic:"👩", t:"Como se diz MÃE?", o:[["👨","Father"],["👩","Mother"],["👦","Brother"]], a:1},
+    {pic:"👨", t:"Como se diz PAI?", o:[["👨","Father"],["👧","Sister"],["👩","Mother"]], a:0},
+    {pic:"👧", t:"SISTER é:", o:[["👧","Irmã"],["👦","Irmão"],["👨","Pai"]], a:0},
+    {txt:"This is my brother.", t:"Quem é?", o:[["👦","O irmão"],["👩","A mãe"],["🐶","O cachorro"]], a:0}
+   ]},
+ { id:"comida", em:"🍎", nome:"Comida", desc:"Vocabulário",
+   palavras:[["🍞","Bread","Pão"],["🥛","Milk","Leite"],["🍎","Apple","Maçã"],["🥚","Egg","Ovo"]],
+   prof:["Descritor: reconhecer repertório lexical (alimentos).","Café da manhã de mentira: aluno pede \"Milk, please\".","Junte com a missão Palavras educadas."],
+   q:[
+    {pic:"🥛", t:"Qual é o nome?", o:[["🥛","Milk"],["🍞","Bread"],["🍎","Apple"]], a:0},
+    {pic:"🍞", t:"Qual é o nome?", o:[["🥚","Egg"],["🍞","Bread"],["🥛","Milk"]], a:1},
+    {pic:"🥚", t:"EGG é:", o:[["🥚","Ovo"],["🍎","Maçã"],["🥛","Leite"]], a:0},
+    {txt:"I eat an apple.", t:"O que eu como?", o:[["🍎","Maçã"],["🍞","Pão"],["🥚","Ovo"]], a:0}
+   ]},
+ { id:"corpo", em:"🖐️", nome:"Meu corpo", desc:"Vocabulário",
+   palavras:[["👁️","Eye","Olho"],["🖐️","Hand","Mão"],["🦵","Leg","Perna"],["👂","Ear","Orelha"]],
+   prof:["Descritor: reconhecer repertório lexical (corpo).","\"Simon says\": touch your eye, touch your hand.","Movimento ajuda a fixar."],
+   q:[
+    {pic:"👁️", t:"Qual é o nome?", o:[["👁️","Eye"],["🦵","Leg"],["🖐️","Hand"]], a:0},
+    {pic:"🖐️", t:"Qual é o nome?", o:[["👂","Ear"],["🖐️","Hand"],["👁️","Eye"]], a:1},
+    {pic:"🦵", t:"LEG é:", o:[["🦵","Perna"],["👂","Orelha"],["👁️","Olho"]], a:0}
+   ]},
+ { id:"texto", em:"🔎", nome:"Detetive do texto", desc:"Achar a informação",
+   palavras:[["🐶","Dog","Cachorro"],["🐱","Cat","Gato"],["🐟","Fish","Peixe"]],
+   prof:["Descritor: localizar informação explícita no texto.","Leia o texto em voz alta junto; aluno aponta a palavra.","Use marca-texto: pintar só a resposta."],
+   q:[
+    {txt:"My name is Ana. I have a cat.", t:"Qual é o animal da Ana?", o:[["🐱","Gato"],["🐶","Cachorro"],["🐟","Peixe"]], a:0},
+    {txt:"Tom has a dog. The dog is big.", t:"Quem tem um cachorro?", o:[["👦","Tom"],["👧","Ana"],["👩","A mãe"]], a:0},
+    {txt:"I like fish. 🐟", t:"Eu gosto de:", o:[["🐟","Peixe"],["🐱","Gato"],["🍞","Pão"]], a:0},
+    {txt:"My name is Leo. I am 12.", t:"Qual é o nome dele?", o:[["🔢","12"],["👦","Leo"],["🐶","Dog"]], a:1}
+   ]},
+ { id:"tamanho", em:"🐘", nome:"Grande e pequeno", desc:"Comparar",
+   palavras:[["🐘","Big","Grande"],["🐭","Small","Pequeno"],["🐘🐭","Bigger","Maior"]],
+   prof:["Descritor: comparativo (8º ano), adaptado.","Compare objetos da sala: The bag is bigger than the pen.","Na lousa: 🐘 big · 🐭 small."],
+   q:[
+    {pic:"🐘", t:"O elefante é:", o:[["🐘","Big"],["🐭","Small"],["🐟","Fish"]], a:0},
+    {pic:"🐭", t:"O rato é:", o:[["🐘","Big"],["🐭","Small"],["🍎","Apple"]], a:1},
+    {txt:"The elephant is bigger than the mouse.", t:"Quem é MAIOR?", o:[["🐘","Elefante"],["🐭","Rato"]], a:0}
+   ]},
+ { id:"ontem", em:"📅", nome:"Hoje e ontem", desc:"Passado",
+   palavras:[["📅","Today","Hoje"],["⏪","Yesterday","Ontem"],["⚽","I play / I played","Eu jogo / Eu joguei"]],
+   prof:["Descritor: passado simples (7º ano), adaptado.","Linha do tempo na lousa: ⏪ yesterday | 📅 today.","Pista: -ED no final = já aconteceu."],
+   q:[
+    {pic:"⏪", t:"YESTERDAY é:", o:[["⏪","Ontem"],["📅","Hoje"],["🌙","Noite"]], a:0},
+    {txt:"Yesterday I played soccer. ⚽", t:"Quando eu joguei?", o:[["⏪","Ontem"],["📅","Hoje"],["🔜","Amanhã"]], a:0},
+    {txt:"Today I am happy. 😊", t:"Quando estou feliz?", o:[["📅","Hoje"],["⏪","Ontem"]], a:0}
+   ]}
+];
+
+// ---------- motor ----------
+const PROF=new URLSearchParams(location.search).has("prof");
+if(PROF) document.body.classList.add("modo-prof");
+function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v);}catch(e){return null}}
+const ts=store("tema"); if(ts) document.documentElement.dataset.theme=ts;
+document.getElementById("tema").onclick=()=>{const a=document.documentElement.dataset.theme||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");const n=a==="dark"?"light":"dark";document.documentElement.dataset.theme=n;store("tema",n);};
+
+function falar(txt){try{const u=new SpeechSynthesisUtterance(txt);u.lang="en-US";u.rate=.8;speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){}}
+function estrelas(){try{return JSON.parse(store("estrelas-inc")||"{}")}catch(e){return {}}}
+const app=document.getElementById("app");
+const ELOGIOS=["Muito bem! 🎉","Isso aí! ⭐","Você conseguiu! 👏","Excelente! 🌟"];
+
+function menu(){
+  const e=estrelas();
+  app.innerHTML=`<div class="card"><h2>Escolha uma missão 🚀</h2>
+  <p>Toque em 🔊 para ouvir em inglês.</p></div>
+  <div class="prof"><b>👨‍🏫 Para o professor</b><ul>
+   <li>Uma missão por aula é suficiente. Repetir é bom!</li>
+   <li>Sempre 3 opções com figura. Não há questões de \"marque duas\".</li>
+   <li>Leia junto com o aluno. O 🔊 ajuda na pronúncia.</li></ul></div>
+  <div class="grid">${MISSOES.map(m=>`<button class="mbtn" data-id="${m.id}"><span class="em">${m.em}</span>${m.nome}<span class="st">${e[m.id]?"⭐".repeat(e[m.id]):""}</span></button>`).join("")}</div>`;
+  app.querySelectorAll(".mbtn").forEach(b=>b.onclick=()=>aprender(MISSOES.find(m=>m.id===b.dataset.id)));
+  scrollTo(0,0);
+}
+
+function aprender(m){
+  app.innerHTML=`<div class="card pop"><div class="pic">${m.em}</div><h2>${m.nome}</h2>
+   <p>Vamos aprender estas palavras:</p>
+   ${m.palavras.map(p=>`<div class="word"><span class="em">${p[0]}</span><span>${p[1]}<br><span class="pt">${p[2]}</span></span><button class="som" data-t="${p[1]}" aria-label="Ouvir ${p[1]}">🔊</button></div>`).join("")}
+   <div><button class="btn" id="go">Vamos jogar! ▶</button></div>
+   <div><button class="btn sec" id="back">← Missões</button></div></div>
+   <div class="prof"><b>👨‍🏫 Roteiro</b><ul>${m.prof.map(x=>`<li>${x}</li>`).join("")}</ul></div>`;
+  app.querySelectorAll(".som").forEach(b=>b.onclick=()=>falar(b.dataset.t));
+  document.getElementById("go").onclick=()=>jogar(m,0,0);
+  document.getElementById("back").onclick=menu;
+  scrollTo(0,0);
+}
+
+function jogar(m,i,acertos){
+  const q=m.q[i]; let tentou=false;
+  app.innerHTML=`<div class="card pop">
+   <div class="dots">${m.q.map((_,k)=>`<span class="${k<i?"feito":k===i?"on":""}"></span>`).join("")}</div>
+   ${q.pic?`<div class="pic">${q.pic}</div>`:""}
+   ${q.txt?`<div class="texto">📖 ${q.txt} <button class="som" id="ler" aria-label="Ouvir o texto">🔊</button></div>`:""}
+   <div class="perg">${q.t}</div>
+   <div class="opts">${q.o.map((o,j)=>`<button class="opt" data-j="${j}"><span class="em">${o[0]}</span>${o[1]}</button>`).join("")}</div>
+   <div class="fb" id="fb" role="status"></div>
+   <div id="next"></div></div>`;
+  if(q.txt) document.getElementById("ler").onclick=()=>falar(q.txt.replace(/[^\x00-\x7F]/g,""));
+  app.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{
+    const j=+b.dataset.j, fb=document.getElementById("fb");
+    if(j===q.a){
+      b.classList.add("ok"); fb.className="fb ok"; fb.textContent=ELOGIOS[Math.floor(Math.random()*ELOGIOS.length)];
+      if(!tentou) acertos++;
+      app.querySelectorAll(".opt").forEach(x=>x.disabled=true);
+      if(/[a-z]/i.test(q.o[j][1])) falar(q.o[j][1]);
+      const fim=i===m.q.length-1;
+      document.getElementById("next").innerHTML=`<button class="btn">${fim?"Terminar 🏁":"Próxima ▶"}</button>`;
+      document.querySelector("#next .btn").onclick=()=>fim?final(m,acertos):jogar(m,i+1,acertos);
+    } else {
+      tentou=true; b.classList.add("no"); b.disabled=true;
+      fb.className="fb no"; fb.textContent="Quase! Tente outra vez 💪";
+    }
+  });
+  scrollTo(0,0);
+}
+
+function final(m,acertos){
+  const n=m.q.length, est=acertos===n?3:acertos>=n/2?2:1;
+  const e=estrelas(); e[m.id]=Math.max(e[m.id]||0,est); store("estrelas-inc",JSON.stringify(e));
+  app.innerHTML=`<div class="card pop"><div class="estrelas">${"⭐".repeat(est)}</div>
+   <h2>Missão completa!</h2><p>Você acertou de primeira <b>${acertos}</b> de <b>${n}</b>.</p>
+   <button class="btn" id="de">Jogar de novo 🔁</button><br><button class="btn sec" id="mn">Outras missões 🚀</button></div>`;
+  document.getElementById("de").onclick=()=>jogar(m,0,0);
+  document.getElementById("mn").onclick=menu;
+  scrollTo(0,0);
+}
+menu();
+</script>
+</body>
+</html>
